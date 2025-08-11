@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Eye, ChevronDown, ChevronUp } from 'lucide-react'
+import { Eye } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -24,12 +24,26 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { language } = useLanguage()
-  const [isExpanded, setIsExpanded] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
 
-  const shouldShowSeeMore = product.description.length > 120
-  const displayDescription =
-    isExpanded || !shouldShowSeeMore ? product.description : product.description.substring(0, 120) + "..."
+  // Parse packaging information from description
+  const parsePackaging = (description: string) => {
+    const lines = description.split('\n')
+    const packagingIndex = lines.findIndex(line => 
+      line.toLowerCase().includes('emballage') || 
+      line.toLowerCase().includes('packaging') || 
+      line.toLowerCase().includes('التعبئة')
+    )
+    
+    if (packagingIndex !== -1) {
+      const packagingLines = lines.slice(packagingIndex + 1)
+      return packagingLines.filter(line => line.trim() !== '')
+    }
+    return []
+  }
+
+  const packagingInfo = parsePackaging(product.description)
+  const descriptionWithoutPackaging = product.description.split('\n\nEmballage')[0].split('\n\nPackaging')[0].split('\n\nالتعبئة')[0]
 
   const handleRequestQuote = () => {
     const subject = encodeURIComponent(
@@ -116,25 +130,17 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Description */}
         <div className="flex-1 mb-4">
-          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed font-inter">{displayDescription}</p>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed font-inter">{descriptionWithoutPackaging}</p>
 
-          {shouldShowSeeMore && (
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="mt-2 text-amber-600 hover:text-amber-700 text-sm font-medium flex items-center gap-1 transition-colors font-inter"
-            >
-              {isExpanded ? (
-                <>
-                  {language === "fr" ? "Voir moins" : language === "en" ? "See less" : "عرض أقل"}
-                  <ChevronUp className="h-3 w-3" />
-                </>
-              ) : (
-                <>
-                  {language === "fr" ? "Voir plus" : language === "en" ? "See more" : "عرض المزيد"}
-                  <ChevronDown className="h-3 w-3" />
-                </>
-              )}
-            </button>
+          {packagingInfo.length > 0 && (
+            <div className="mt-4">
+              <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">{language === "fr" ? "Emballage" : language === "en" ? "Packaging" : "التعبئة"}:</h4>
+              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm">
+                {packagingInfo.map((line, index) => (
+                  <li key={index}>{line}</li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
 

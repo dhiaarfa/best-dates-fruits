@@ -17,6 +17,18 @@ export default function ProductsPage() {
   const products = [
     {
       id: 1,
+      name: language === "fr" ? "Deglet Nour Branchée" : language === "en" ? "Deglet Nour Branchée" : "دقلة نور متفرعة",
+      description: language === "fr" 
+        ? "La couronne des dattes tunisiennes, souvent appelée 'reine des dattes', désigne la variété Deglet Nour. Cette variété est très appréciée pour sa qualité supérieure, sa chair fondante et son goût mielleux unique.\n\nEmballage :\nSelon le choix et les marques de nos clients, toujours dans le respect des normes et standards internationaux.\n\nBoite cartonnée : 5, 2, 1 et 0.5 kg\nBoite cristale : 500 et 200gr\nCoffret cartonnée : de 2, 1 et 0.5 kg\nLes Bouquets : 2 et 0.1 kg"
+        : language === "en"
+        ? "The crown of Tunisian dates, often called 'queen of dates', refers to the Deglet Nour variety. This variety is highly appreciated for its superior quality, melting flesh and unique honey taste.\n\nPackaging:\nAccording to the choice and brands of our customers, always respecting international norms and standards.\n\nCardboard box: 5, 2, 1 and 0.5 kg\nCrystal box: 500 and 200gr\nCardboard box: 2, 1 and 0.5 kg\nThe Bouquets: 2 and 0.1 kg"
+        : "تاج التمور التونسية، غالباً ما يسمى 'ملكة التمور'، يشير إلى صنف دقلة نور. هذا الصنف محبوب جداً لجودته العالية ولحمه الذائب وطعمه العسلي الفريد.\n\nالتعبئة:\nحسب اختيار وعلامات عملائنا، دائماً في احترام المعايير والمواصفات الدولية.\n\nصندوق كرتوني: 5، 2، 1 و 0.5 كغ\nعلبة كريستال: 500 و 200 غرام\nعلبة كرتونية: 2، 1 و 0.5 كغ\nالباقات: 2 و 0.1 كغ",
+      image: "/images/deglet-nour-branch-natural.jpeg",
+      category: language === "fr" ? "Branchée" : language === "en" ? "Branchée" : "متفرعة",
+      inStock: true
+    },
+    {
+      id: 2,
       name: language === "fr" ? "Deglet Nour Standard" : language === "en" ? "Deglet Nour Standard" : "دقلة نور عادية",
       description: language === "fr" 
         ? "La couronne des dattes tunisiennes, souvent appelée 'reine des dattes', désigne la variété Deglet Nour. Cette variété est très appréciée pour sa qualité supérieure, sa chair fondante et son goût mielleux unique.\n\nEmballage :\nSelon le choix et les marques de nos clients, toujours dans le respect des normes et standards internationaux.\n\nBoîte cartonnée : 10 kg, 5 kg\nCoffret cartonné : 2 kg, 1 kg et 0,5 kg"
@@ -28,7 +40,7 @@ export default function ProductsPage() {
       inStock: true
     },
     {
-      id: 2,
+      id: 3,
       name: language === "fr" ? "Deglet Nour Conditionnées" : language === "en" ? "Packaged Deglet Nour" : "دقلة نور معبأة",
       description: language === "fr"
         ? "La couronne des dattes tunisiennes, souvent appelée 'reine des dattes', désigne la variété Deglet Nour. Cette variété est très appréciée pour sa qualité supérieure, sa chair fondante et son goût mielleux unique.\n\nEmballage :\nSelon le choix et les marques de nos clients, toujours dans le respect des normes et standards internationaux.\n\nGodet : 500 g et 250 g\nRavier en bois, cartons ou en polystyrène : 200 g, 250 g, 400 g et 500 g"
@@ -40,7 +52,7 @@ export default function ProductsPage() {
       inStock: true
     },
     {
-      id: 3,
+      id: 4,
       name: language === "fr" ? "Alig et Khouet Alig" : language === "en" ? "Alig and Khouet Alig" : "عليق وخوت عليق",
       description: language === "fr"
         ? "La variété Alig est la « grande sœur » de la petite variété Khouet Alig, à laquelle elle s'apparente par la couleur, le goût et la teneur en sucre. Elle ne s'en différencie que par sa taille.\n\nEmballage :\nBoîte cartonnée : 10 kg\nRavier polystyrène : 500 g, 400 g, 250 g et 200 g\nBarquette en carton : 200 g"
@@ -52,7 +64,7 @@ export default function ProductsPage() {
       inStock: true
     },
     {
-      id: 4,
+      id: 5,
       name: language === "fr" ? "Kenta" : language === "en" ? "Kenta" : "كنتا",
       description: language === "fr"
         ? "Les dattes Kenta mûrissent un peu plus tôt que les autres variétés. Il est possible d'en commencer la récolte dès la fin septembre ou le début octobre. Les dattes dorées et claires possèdent une teneur en eau légèrement supérieure et elles sont un peu moins sucrées.\n\nEmballage :\nRavier polystyrène : 500 g, 400 g, 250 g et 200 g"
@@ -64,7 +76,7 @@ export default function ProductsPage() {
       inStock: true
     },
     {
-      id: 5,
+      id: 6,
       name: language === "fr" ? "Dattes dénoyautées" : language === "en" ? "Pitted Dates" : "تمور منزوعة النوى",
       description: language === "fr"
         ? "Dattes dénoyautées prêtes à consommer, pratiques et savoureuses. Idéales pour les préparations culinaires et industrielles.\n\nEmballage :\nSelon le choix et les marques de nos clients, toujours dans le respect des normes et standards internationaux.\n\nBoîte cartonnée : 10 kg\nCup : 1 kg et 500 g\nRavier : 500 g, 400 g et 250 g"
@@ -81,6 +93,7 @@ export default function ProductsPage() {
 
   const categories = [
     { id: "all", name: language === "fr" ? "Tous" : language === "en" ? "All" : "الكل" },
+    { id: "branchee", name: language === "fr" ? "Branchée" : language === "en" ? "Branchée" : "متفرعة" },
     { id: "standard", name: language === "fr" ? "Standard" : language === "en" ? "Standard" : "عادي" },
     { id: "packaged", name: language === "fr" ? "Conditionnées" : language === "en" ? "Packaged" : "معبأة" },
     { id: "local", name: language === "fr" ? "Variétés Locales" : language === "en" ? "Local Varieties" : "أصناف محلية" },
@@ -91,6 +104,7 @@ export default function ProductsPage() {
     ? products 
     : products.filter(product => {
         const categoryLower = product.category?.toLowerCase() || ""
+        if (selectedCategory === "branchee") return categoryLower.includes("branchée") || categoryLower.includes("branchee") || categoryLower.includes("متفرعة")
         if (selectedCategory === "standard") return categoryLower.includes("standard") || categoryLower.includes("عادي")
         if (selectedCategory === "packaged") return categoryLower.includes("conditionnées") || categoryLower.includes("packaged") || categoryLower.includes("معبأة")
         if (selectedCategory === "local") return categoryLower.includes("variétés locales") || categoryLower.includes("local varieties") || categoryLower.includes("أصناف محلية")

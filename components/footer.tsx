@@ -25,9 +25,6 @@ export default function Footer() {
                 height={40}
                 className="rounded-lg"
               />
-              <div>
-                <h3 className="text-lg font-bold text-bdf-gold">Best Dates & Fruits</h3>
-              </div>
             </div>
             
             {/* Ramis Logo */}
@@ -39,9 +36,6 @@ export default function Footer() {
                 height={40}
                 className="rounded-lg"
               />
-              <div>
-                <h3 className="text-lg font-bold text-bdf-gold">Ramis Dattes & Fruits</h3>
-              </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               {language === "fr" &&
