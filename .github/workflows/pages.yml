@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci || npm install --legacy-peer-deps
+      - run: echo "GITHUB_REPOSITORY=${{ github.repository }}" >> $GITHUB_ENV
       - run: npm run build
       - run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
