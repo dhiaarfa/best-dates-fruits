@@ -70,9 +70,11 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom brand colors
-        "bdf-gold": "#D4AF37",
-        "bdf-darkgold": "#B8941F",
+        // Custom brand colors - BD&F theme
+        "bdf-gold": "#FF6B35", // Vibrant orange
+        "bdf-darkgold": "#E55A2B", // Darker orange
+        "bdf-brown": "#8B4513", // Dark brown
+        "bdf-light-brown": "#A0522D", // Light brown
         gold: {
           50: "#FFFBEB",
           100: "#FEF3C7",

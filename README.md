@@ -148,5 +148,5 @@ This project is proprietary and belongs to Best Dates & Fruits.
 
 ## Support
 
-For support, email direction@best-dattes-and-fruits.com or visit our contact page.
+For support, email direction@bestdatesandfruits.com or visit our contact page.
 "# bdf" 

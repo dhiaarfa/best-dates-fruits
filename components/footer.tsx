@@ -8,7 +8,7 @@ import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react
 
 export default function Footer() {
   const { language } = useLanguage()
-  const t = translations[language]
+  const t = translations[language as keyof typeof translations]
   const isRTL = language === "ar"
 
   return (
@@ -18,13 +18,15 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
-              <Image
-                src="/images/best-dates-fruits-logo.png"
-                alt="Best Dates & Fruits"
-                width={40}
-                height={40}
-                className="rounded-lg"
-              />
+              <div className="bg-white/70 rounded px-0 py-0.5 shadow-sm">
+                <Image
+                  src="/images/new-bdf-logo.png"
+                  alt="Best Dates & Fruits - D&F Logo"
+                  width={200}
+                  height={70}
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
             </div>
             
             {/* Ramis Logo */}
@@ -112,7 +114,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Mail className="h-4 w-4 text-bdf-gold flex-shrink-0" />
-                <p className="text-sm text-gray-300">direction@best-dattes-and-fruits.com</p>
+                <p className="text-sm text-gray-300">direction@bestdatesandfruits.com</p>
+              </div>
+              <div className="flex items-center space-x-3 rtl:space-x-reverse">
+                <Mail className="h-4 w-4 text-bdf-gold flex-shrink-0" />
+                <p className="text-sm text-gray-300">commercial@bestdatesandfruits.com</p>
               </div>
             </div>
           </div>
@@ -153,6 +159,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
+
 
             <div className="mt-6">
               <h4 className="text-sm font-semibold text-bdf-gold mb-2">

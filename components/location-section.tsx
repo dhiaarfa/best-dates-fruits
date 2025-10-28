@@ -68,9 +68,19 @@ export function LocationSection() {
                 <Mail className="w-6 h-6 text-bdf-gold mt-1" />
                 <div>
                   <h4 className="font-semibold text-lg mb-1">
-                    {language === "en" ? "Email" : language === "fr" ? "Email" : "البريد الإلكتروني"}
+                    {language === "en" ? "Management Email" : language === "fr" ? "Email Direction" : "البريد الإلكتروني للإدارة"}
                   </h4>
-                  <p className="text-gray-600">direction@best-dattes-and-fruits.com</p>
+                  <p className="text-gray-600">direction@bestdatesandfruits.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gold-50 rounded-lg">
+                <Mail className="w-6 h-6 text-bdf-gold mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">
+                    {language === "en" ? "Sales Email" : language === "fr" ? "Email Commercial" : "البريد الإلكتروني التجاري"}
+                  </h4>
+                  <p className="text-gray-600">commercial@bestdatesandfruits.com</p>
                 </div>
               </div>
 

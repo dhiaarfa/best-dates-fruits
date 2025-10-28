@@ -54,7 +54,7 @@ export default function TermsPage() {
               <h2>Contact Information</h2>
               <p>
                 If you have any questions about these Terms of Service, please contact us at
-                direction@best-dattes-and-fruits.com
+                direction@bestdatesandfruits.com
               </p>
             </div>
           </div>

@@ -111,13 +111,13 @@ export default function Home() {
           <div className="text-center max-w-5xl mx-auto">
             {/* Logo */}
             <div className="mb-8">
-              <div className="inline-block">
+              <div className="inline-block bg-white/75 rounded-lg px-0 py-2 shadow-lg">
                 <Image
-                  src="/images/best-dates-fruits-logo.png"
-                  alt="Best Dates & Fruits"
-                  width={500}
-                  height={200}
-                  className="h-32 w-auto filter brightness-0 contrast-100 invert"
+                  src="/images/new-bdf-logo.png"
+                  alt="Best Dates & Fruits - D&F Logo"
+                  width={600}
+                  height={240}
+                  className="h-36 w-auto object-contain"
                   priority
                 />
               </div>
@@ -176,14 +176,14 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <div className="bg-bdf-gold rounded-3xl p-8 shadow-xl px-5 py-5 leading-4">
+            <div className="relative flex justify-end">
+              <div className="bg-white/80 rounded-xl px-0 py-3 shadow-xl border border-gray-100 inline-block">
                 <Image
-                  src="/images/best-dates-fruits-logo.png"
-                  alt="Best Dates & Fruits Logo"
+                  src="/images/new-bdf-logo.png"
+                  alt="Best Dates & Fruits - D&F Logo"
                   width={500}
                   height={200}
-                  className="w-full h-auto object-contain max-w-md mx-auto filter brightness-0 contrast-100 invert"
+                  className="h-28 w-auto object-contain"
                   priority
                 />
                 <div className="text-center mt-6">
@@ -338,9 +338,9 @@ export default function Home() {
                     <div className="bg-bdf-gold/10 rounded-2xl p-4">{feature.icon}</div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4 font-playfair">
-                    {feature.title[language]}
+                    {feature.title[language as keyof typeof feature.title]}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 font-inter">{feature.description[language]}</p>
+                  <p className="text-gray-600 dark:text-gray-300 font-inter">{feature.description[language as keyof typeof feature.description]}</p>
                 </CardContent>
               </Card>
             ))}

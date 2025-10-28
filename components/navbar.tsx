@@ -157,13 +157,13 @@ const Navbar = () => {
             href={`/${language === "fr" ? "" : language}`}
             className="flex items-center space-x-3 group transition-transform duration-200 hover:scale-105"
           >
-            <div className="bg-gradient-to-br from-bdf-gold/20 to-orange-100/30 rounded-2xl p-2 group-hover:shadow-md transition-all duration-200">
+            <div className="bg-white/80 rounded px-0.5 py-1 shadow-sm group-hover:shadow-md transition-all duration-200">
               <Image
-                src="/images/best-dates-fruits-logo.png"
-                alt="Best Dates & Fruits"
-                width={180}
-                height={70}
-                className="h-14 w-auto filter brightness-0 contrast-100 dark:brightness-100 dark:contrast-100 dark:filter-none transition-all duration-200"
+                src="/images/new-bdf-logo.png"
+                alt="Best Dates & Fruits - D&F Logo"
+                width={280}
+                height={100}
+                className="h-14 w-auto transition-all duration-200 object-contain"
                 priority
               />
             </div>
@@ -182,7 +182,7 @@ const Navbar = () => {
                 }`}
                 disabled={isLoading}
               >
-                {item.name[language]}
+                {item.name[language as keyof typeof item.name]}
                 {pathname === item.href && (
                   <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-bdf-gold rounded-full"></span>
                 )}
@@ -282,7 +282,7 @@ const Navbar = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                   disabled={isLoading}
                 >
-                  {item.name[language]}
+                  {item.name[language as keyof typeof item.name]}
                 </button>
               ))}
 

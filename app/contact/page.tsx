@@ -85,9 +85,21 @@ function ContactPageContent() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                        {language === "fr" ? "Email" : language === "en" ? "Email" : "البريد الإلكتروني"}
+                        {language === "fr" ? "Email Direction" : language === "en" ? "Management Email" : "البريد الإلكتروني للإدارة"}
                       </h3>
-                      <p className="text-gray-300">direction@best-dattes-and-fruits.com</p>
+                      <p className="text-gray-300">direction@bestdatesandfruits.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4 rtl:space-x-reverse">
+                    <div className="flex-shrink-0">
+                      <Mail className="h-6 w-6 text-amber-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                        {language === "fr" ? "Email Commercial" : language === "en" ? "Sales Email" : "البريد الإلكتروني التجاري"}
+                      </h3>
+                      <p className="text-gray-300">commercial@bestdatesandfruits.com</p>
                     </div>
                   </div>
 

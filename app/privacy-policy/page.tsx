@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
               <h2>Contact Us</h2>
               <p>
                 If you have any questions about this Privacy Policy, please contact us at
-                direction@best-dattes-and-fruits.com
+                direction@bestdatesandfruits.com
               </p>
             </div>
           </div>

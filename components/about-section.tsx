@@ -12,14 +12,14 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="mb-8">
-              {/* Logo with gold background and white logo */}
-              <div className="bg-bdf-gold p-6 rounded-lg inline-block mb-6">
+              {/* Logo with minimal transparent background */}
+              <div className="bg-white/75 px-0 py-1 rounded inline-block mb-6 shadow-md">
                 <Image
-                  src="/images/best-dates-fruits-logo.png"
-                  alt="Best Dates & Fruits Logo"
-                  width={200}
+                  src="/images/new-bdf-logo.png"
+                  alt="Best Dates & Fruits - D&F Logo"
+                  width={240}
                   height={80}
-                  className="filter brightness-0 invert" // Makes the logo white
+                  className="h-16 w-auto object-contain"
                 />
               </div>
             </div>
