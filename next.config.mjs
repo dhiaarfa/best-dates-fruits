@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
-const repo = process.env.GITHUB_REPOSITORY || ''
-const repoName = repo.split('/')[1] || ''
-const isProjectPages = repoName && !repoName.endsWith('.github.io')
-const basePath = isProjectPages ? `/${repoName}` : ''
+const isProd = process.env.NODE_ENV === 'production'
+// On GitHub Pages for this repo, the site lives under /best-dates-fruits
+const basePath = isProd ? '/best-dates-fruits' : ''
 
 const nextConfig = {
   // Enable static export for multiple deployment options
