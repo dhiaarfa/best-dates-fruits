@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { withBasePath } from "@/lib/paths"
 import { Award, Leaf, Shield, Check, Factory, Users, Truck, BadgeIcon as Certificate } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card"
 import Navbar from "@/components/navbar"
@@ -95,7 +96,7 @@ export default function Home() {
         {/* Full-width background image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/natural-dates-hero.jpeg"
+            src={withBasePath("/images/natural-dates-hero.jpeg")}
             alt="Dattes naturelles Best Dates & Fruits"
             fill
             className="object-cover"
@@ -113,7 +114,7 @@ export default function Home() {
             <div className="mb-8">
               <div className="inline-block bg-white/75 rounded-lg px-0 py-2 shadow-lg">
                 <Image
-                  src="/images/new-bdf-logo.png"
+                  src={withBasePath("/images/new-bdf-logo.png")}
                   alt="Best Dates & Fruits - D&F Logo"
                   width={600}
                   height={240}
@@ -179,7 +180,7 @@ export default function Home() {
             <div className="relative flex justify-end">
               <div className="bg-white/80 rounded-xl px-0 py-3 shadow-xl border border-gray-100 inline-block">
                 <Image
-                  src="/images/new-bdf-logo.png"
+                  src={withBasePath("/images/new-bdf-logo.png")}
                   alt="Best Dates & Fruits - D&F Logo"
                   width={500}
                   height={200}
@@ -368,7 +369,7 @@ export default function Home() {
               >
                 <div className="relative aspect-square">
                   <Image
-                    src={image.src || "/placeholder.svg"}
+                    src={withBasePath(image.src || "/placeholder.svg")}
                     alt={image.alt}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"

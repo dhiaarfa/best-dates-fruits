@@ -10,6 +10,9 @@ import { CartProvider } from "@/contexts/cart-context"
 import { PageTransition } from "@/components/page-transition"
 import { BackToTop } from "@/components/back-to-top"
 import { CookieConsent } from "@/components/cookie-consent"
+import getConfig from "next/config"
+
+const SITE_URL = "https://dhiaarfa.github.io/best-dates-fruits"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,24 +38,24 @@ export const metadata: Metadata = {
   robots: "index, follow",
   icons: {
     icon: [
-      { url: "/images/original-bdf-favicon.svg", sizes: "32x32", type: "image/svg+xml" },
-      { url: "/images/original-bdf-favicon.svg", sizes: "16x16", type: "image/svg+xml" },
-      { url: "/images/original-bdf-favicon.svg", sizes: "32x32", type: "image/svg+xml" },
-      { url: "/images/original-bdf-favicon.svg", sizes: "192x192", type: "image/svg+xml" },
-      { url: "/images/original-bdf-favicon.svg", sizes: "512x512", type: "image/svg+xml" },
+      { url: "/images/new-bdf-logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/new-bdf-logo.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/new-bdf-logo.png", sizes: "192x192", type: "image/png" },
+      { url: "/images/new-bdf-logo.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "/images/original-bdf-favicon.svg", sizes: "180x180", type: "image/svg+xml" }],
-    shortcut: "/images/original-bdf-favicon.svg",
+    apple: [{ url: "/images/new-bdf-logo.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/images/new-bdf-logo.png",
   },
   manifest: "/manifest.json",
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "Best Dates & Fruits - Premium Tunisian Dates",
     description: "Premium Tunisian dates and date products from the heart of Tozeur oasis",
-    url: "https://best-dates-fruits.com",
+    url: SITE_URL,
     siteName: "Best Dates & Fruits",
     images: [
       {
-        url: "/images/new-bdf-logo.png", // Updated to use the new logo image
+        url: "/images/new-bdf-logo.png",
         width: 1200,
         height: 630,
         alt: "Best Dates & Fruits Logo",
@@ -65,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Best Dates & Fruits - Premium Tunisian Dates",
     description: "Premium Tunisian dates and date products from the heart of Tozeur oasis",
-    images: ["/images/new-bdf-logo.png"], // Updated to use the new logo image
+    images: ["/images/new-bdf-logo.png"],
   },
     generator: 'v0.dev'
 }
@@ -79,12 +82,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${playfair.variable}`}>
       <head>
         {/* Favicon and other icons */}
-        <link rel="icon" href="/images/original-bdf-favicon.svg" sizes="32x32" type="image/svg+xml" />
-        <link rel="icon" href="/images/original-bdf-favicon.svg" sizes="16x16" type="image/svg+xml" />
-        <link rel="icon" href="/images/original-bdf-favicon.svg" sizes="32x32" type="image/svg+xml" />
-        <link rel="icon" href="/images/original-bdf-favicon.svg" sizes="192x192" type="image/svg+xml" />
-        <link rel="icon" href="/images/original-bdf-favicon.svg" sizes="512x512" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/images/original-bdf-favicon.svg" sizes="180x180" />
+        <link rel="icon" href="/images/new-bdf-logo.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/images/new-bdf-logo.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/images/new-bdf-logo.png" sizes="192x192" type="image/png" />
+        <link rel="icon" href="/images/new-bdf-logo.png" sizes="512x512" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/new-bdf-logo.png" sizes="180x180" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#8B4513" />
         <meta name="msapplication-TileColor" content="#8B4513" />

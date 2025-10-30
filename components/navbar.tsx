@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { withBasePath } from "@/lib/paths"
 import { usePathname, useRouter } from "next/navigation"
 import { Menu, X, ChevronDown, Globe, Instagram, Facebook, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -159,7 +160,7 @@ const Navbar = () => {
           >
             <div className="bg-white/80 rounded px-0.5 py-1 shadow-sm group-hover:shadow-md transition-all duration-200">
               <Image
-                src="/images/new-bdf-logo.png"
+                src={withBasePath("/images/new-bdf-logo.png")}
                 alt="Best Dates & Fruits - D&F Logo"
                 width={280}
                 height={100}

@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { withBasePath } from "@/lib/paths"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "@/lib/translations"
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react'
@@ -20,7 +21,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
               <div className="bg-white/70 rounded px-0 py-0.5 shadow-sm">
                 <Image
-                  src="/images/new-bdf-logo.png"
+                  src={withBasePath("/images/new-bdf-logo.png")}
                   alt="Best Dates & Fruits - D&F Logo"
                   width={200}
                   height={70}
@@ -32,7 +33,7 @@ export default function Footer() {
             {/* Ramis Logo */}
             <div className="flex items-center space-x-3 rtl:space-x-reverse mt-4">
               <Image
-                src="/images/ramis logo.jpeg"
+                src={withBasePath("/images/ramis logo.jpeg")}
                 alt="Ramis Dattes & Fruits"
                 width={40}
                 height={40}

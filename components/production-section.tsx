@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { withBasePath } from "@/lib/paths"
 import { useLanguage } from "@/components/language-provider"
 import { getTranslation } from "@/lib/translations"
 import { Card, CardContent } from "@/components/ui/card"
@@ -50,7 +51,7 @@ const ProductionSection = () => {
         {/* Production Images Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <div className="relative h-[250px] rounded-lg overflow-hidden shadow-lg">
-            <Image src="/images/date-processing.jpg" alt="Date Processing" fill className="object-cover" />
+            <Image src={withBasePath("/images/date-processing.jpg")} alt="Date Processing" fill className="object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
               <h4 className="font-semibold text-sm">
                 {language === "en" ? "Date Processing" : language === "fr" ? "Traitement des Dattes" : "معالجة التمور"}
@@ -59,7 +60,7 @@ const ProductionSection = () => {
           </div>
 
           <div className="relative h-[250px] rounded-lg overflow-hidden shadow-lg">
-            <Image src="/images/production-packaging.jpg" alt="Packaging Line" fill className="object-cover" />
+            <Image src={withBasePath("/images/production-packaging.jpg")} alt="Packaging Line" fill className="object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
               <h4 className="font-semibold text-sm">
                 {language === "en" ? "Packaging Line" : language === "fr" ? "Ligne d'Emballage" : "خط التعبئة"}
@@ -68,7 +69,7 @@ const ProductionSection = () => {
           </div>
 
           <div className="relative h-[250px] rounded-lg overflow-hidden shadow-lg">
-            <Image src="/images/storage-warehouse.jpg" alt="Storage Warehouse" fill className="object-cover" />
+            <Image src={withBasePath("/images/storage-warehouse.jpg")} alt="Storage Warehouse" fill className="object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
               <h4 className="font-semibold text-sm">
                 {language === "en"
@@ -81,7 +82,7 @@ const ProductionSection = () => {
           </div>
 
           <div className="relative h-[250px] rounded-lg overflow-hidden shadow-lg">
-            <Image src="/images/warehouse-zabeel.jpg" alt="Product Distribution" fill className="object-cover" />
+            <Image src={withBasePath("/images/warehouse-zabeel.jpg")} alt="Product Distribution" fill className="object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3">
               <h4 className="font-semibold text-sm">
                 {language === "en"
