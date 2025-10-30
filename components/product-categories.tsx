@@ -22,7 +22,7 @@ const ProductCategories = () => {
         fr: "Dattes premium enrobées de chocolat riche avec garnitures décoratives.",
         ar: "تمور فاخرة مغطاة بالشوكولاتة الغنية مع زينة وزخارف.",
       },
-      image: "/images/chocolate-dates.jpg",
+      image: "images/chocolate-dates.jpg",
       link: `/${language === "en" ? "" : language + "/"}products/chocolate-dates`,
     },
     {
@@ -37,7 +37,7 @@ const ProductCategories = () => {
         fr: "Dattes de luxe farcies aux noix, créant l'équilibre parfait entre douceur et croquant.",
         ar: "تمور فاخرة محشوة بالمكسرات، تخلق التوازن المثالي بين الحلاوة والقرمشة.",
       },
-      image: "/images/walnut-stuffed-dates.jpg",
+      image: "images/walnut-stuffed-dates.jpg",
       link: `/${language === "en" ? "" : language + "/"}products/stuffed-dates`,
     },
     {
@@ -52,7 +52,7 @@ const ProductCategories = () => {
         fr: "Boules d'énergie naturelles faites avec des dattes, noix et graines pour une collation saine.",
         ar: "كرات طاقة طبيعية مصنوعة من التمر والمكسرات والبذور لخيار وجبة خفيفة صحية.",
       },
-      image: "/images/pistachio-date-balls.jpg",
+      image: "images/pistachio-date-balls.jpg",
       link: `/${language === "en" ? "" : language + "/"}products/energy-balls`,
     },
     {
@@ -67,7 +67,7 @@ const ProductCategories = () => {
         fr: "Coffrets cadeaux magnifiquement présentés avec des dattes premium assorties, parfaits pour les occasions spéciales.",
         ar: "علب هدايا مقدمة بشكل جميل مع تشكيلة من التمور الفاخرة، مثالية للمناسبات الخاصة.",
       },
-      image: "/images/elegant-gift-box.jpg",
+      image: "images/elegant-gift-box.jpg",
       link: `/${language === "en" ? "" : language + "/"}pastries`,
     },
   ]

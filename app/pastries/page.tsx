@@ -16,32 +16,32 @@ export default function PastriesPage() {
   const isRTL = language === "ar"
 
   const pastryImages = [
-    "/images/stuffed-date-single.jpeg",
-    "/images/dates-artistic-display.jpeg",
-    "/images/colorful-stuffed-dates.jpeg",
-    "/images/elegant-dates-platter.jpeg",
-    "/images/pistachio-stuffed-date.jpeg",
-    "/images/mixed-nuts-stuffed-date.jpeg",
-    "/images/pistachio-date-cross-section.jpeg",
-    "/images/stuffed-dates-walnuts-pistachios.jpeg",
-    "/images/pistachio-covered-pastry.jpeg",
-    "/images/assorted-stuffed-dates-tray.jpeg",
-    "/images/elegant-dates-silver-tray.jpeg",
-    "/images/golden-wrapped-chocolates.jpeg",
-    "/images/decorated-dates-glass-plate.jpeg",
-    "/images/pistachio-date-balls.jpeg",
-    "/images/golden-chocolates-cups.jpeg",
-    "/images/premium-stuffed-dates-container.jpeg",
-    "/images/elegant-pastry-boxes.jpeg",
-    "/images/ferrero-style-dates.jpeg",
-    "/images/white-decorated-dates-box.jpeg",
-    "/images/golden-tray-dates.jpeg",
-    "/images/luxury-wedding-dates.jpeg",
-    "/images/golden-tin-dates.jpeg",
-    "/images/tulle-wrapped-dates.jpeg",
-    "/images/black-tray-leaf-dates.jpeg",
-    "/images/elegant-flower-dates.jpeg",
-    "/images/papa-celebration-dates.jpeg"
+    "images/stuffed-date-single.jpeg",
+    "images/dates-artistic-display.jpeg",
+    "images/colorful-stuffed-dates.jpeg",
+    "images/elegant-dates-platter.jpeg",
+    "images/pistachio-stuffed-date.jpeg",
+    "images/mixed-nuts-stuffed-date.jpeg",
+    "images/pistachio-date-cross-section.jpeg",
+    "images/stuffed-dates-walnuts-pistachios.jpeg",
+    "images/pistachio-covered-pastry.jpeg",
+    "images/assorted-stuffed-dates-tray.jpeg",
+    "images/elegant-dates-silver-tray.jpeg",
+    "images/golden-wrapped-chocolates.jpeg",
+    "images/decorated-dates-glass-plate.jpeg",
+    "images/pistachio-date-balls.jpeg",
+    "images/golden-chocolates-cups.jpeg",
+    "images/premium-stuffed-dates-container.jpeg",
+    "images/elegant-pastry-boxes.jpeg",
+    "images/ferrero-style-dates.jpeg",
+    "images/white-decorated-dates-box.jpeg",
+    "images/golden-tray-dates.jpeg",
+    "images/luxury-wedding-dates.jpeg",
+    "images/golden-tin-dates.jpeg",
+    "images/tulle-wrapped-dates.jpeg",
+    "images/black-tray-leaf-dates.jpeg",
+    "images/elegant-flower-dates.jpeg",
+    "images/papa-celebration-dates.jpeg"
   ]
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -112,7 +112,7 @@ export default function PastriesPage() {
               ? "Discover our collection of artisanal date pastries"
               : "اكتشف مجموعتنا من حلويات التمر الحرفية"
           }
-          backgroundImage="/images/colorful-stuffed-dates.jpeg"
+          backgroundImage="images/colorful-stuffed-dates.jpeg"
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" dir={isRTL ? "rtl" : "ltr"}>

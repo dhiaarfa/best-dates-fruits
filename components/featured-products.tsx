@@ -19,7 +19,7 @@ export function FeaturedProducts() {
         fr: "Les meilleures dattes du monde, translucides et sucrées avec une saveur délicate.",
         ar: "أجود التمور في العالم، شفافة وحلوة بنكهة رقيقة.",
       },
-      image: "/images/deglet-nour-natural.jpeg",
+      image: "images/deglet-nour-natural.jpeg",
       price: {
         en: "$12.99",
         fr: "12,99 €",
@@ -43,7 +43,7 @@ export function FeaturedProducts() {
         fr: "Édulcorant naturel pur fait à partir de dattes premium. Parfait pour les desserts et boissons.",
         ar: "محلي طبيعي خالص مصنوع من التمور الفاخرة. مثالي للحلويات والمشروبات.",
       },
-      image: "/images/date-syrup-bowl.jpeg",
+      image: "images/date-syrup-bowl.jpeg",
       price: {
         en: "$8.99",
         fr: "8,99 €",
@@ -67,7 +67,7 @@ export function FeaturedProducts() {
         fr: "Dattes premium fourrées aux amandes et pistaches. Un délice gastronomique.",
         ar: "تمور فاخرة محشوة باللوز والفستق. متعة للذواقة.",
       },
-      image: "/images/stuffed-dates-variety.jpeg",
+      image: "images/stuffed-dates-variety.jpeg",
       price: {
         en: "$18.99",
         fr: "18,99 €",

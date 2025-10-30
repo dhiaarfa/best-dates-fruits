@@ -16,29 +16,29 @@ export default function FruitsPage() {
   const isRTL = language === "ar"
 
   const fruitImages = [
-    "/images/fresh-peaches-display.jpeg",
-    "/images/ramy-pomegranate.jpeg",
-    "/images/strawberry-field.jpeg",
-    "/images/prickly-pear-crates.jpeg",
-    "/images/prickly-pear-peeling.jpeg",
-    "/images/melon-market.jpeg",
-    "/images/strawberries-packaged.jpeg",
-    "/images/pomegranates-fresh.jpeg",
-    "/images/peaches-display.jpeg",
-    "/images/peaches-hand-quality.jpeg",
-    "/images/strawberry-single.jpeg",
-    "/images/apples-bulk.jpeg",
-    "/images/red-apples-crate.jpeg",
-    "/images/apples-pyramid-display.jpeg",
-    "/images/dates-palm-branches.jpeg",
-    "/images/flat-peaches-crate.jpeg",
-    "/images/single-watermelon.jpeg",
-    "/images/strawberries-field-flowers.jpeg",
-    "/images/prickly-pear-colorful.jpeg",
-    "/images/apples-crates-storage.jpeg",
-    "/images/strawberry-field-harvest.jpeg",
-    "/images/cantaloupe-field.jpeg",
-    "/images/prickly-pear-variety.jpeg"
+    "images/fresh-peaches-display.jpeg",
+    "images/ramy-pomegranate.jpeg",
+    "images/strawberry-field.jpeg",
+    "images/prickly-pear-crates.jpeg",
+    "images/prickly-pear-peeling.jpeg",
+    "images/melon-market.jpeg",
+    "images/strawberries-packaged.jpeg",
+    "images/pomegranates-fresh.jpeg",
+    "images/peaches-display.jpeg",
+    "images/peaches-hand-quality.jpeg",
+    "images/strawberry-single.jpeg",
+    "images/apples-bulk.jpeg",
+    "images/red-apples-crate.jpeg",
+    "images/apples-pyramid-display.jpeg",
+    "images/dates-palm-branches.jpeg",
+    "images/flat-peaches-crate.jpeg",
+    "images/single-watermelon.jpeg",
+    "images/strawberries-field-flowers.jpeg",
+    "images/prickly-pear-colorful.jpeg",
+    "images/apples-crates-storage.jpeg",
+    "images/strawberry-field-harvest.jpeg",
+    "images/cantaloupe-field.jpeg",
+    "images/prickly-pear-variety.jpeg"
   ]
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -109,7 +109,7 @@ export default function FruitsPage() {
               ? "Discover our selection of fresh seasonal fruits"
               : "اكتشف مجموعتنا من الفواكه الطازجة الموسمية"
           }
-          backgroundImage="/images/deglet-nour-dates.jpeg"
+          backgroundImage="images/deglet-nour-dates.jpeg"
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" dir={isRTL ? "rtl" : "ltr"}>

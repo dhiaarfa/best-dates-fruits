@@ -27,7 +27,7 @@ const ExhibitionsSection = () => {
         fr: "Paris, France",
         ar: "باريس، فرنسا",
       },
-      image: "/images/hero-dates-1.jpg",
+      image: "images/hero-dates-1.jpg",
     },
     {
       id: 2,
@@ -46,7 +46,7 @@ const ExhibitionsSection = () => {
         fr: "Dubaï, EAU",
         ar: "دبي، الإمارات العربية المتحدة",
       },
-      image: "/images/hero-dates-2.jpg",
+      image: "images/hero-dates-2.jpg",
     },
     {
       id: 3,
@@ -65,7 +65,7 @@ const ExhibitionsSection = () => {
         fr: "Cologne, Allemagne",
         ar: "كولون، ألمانيا",
       },
-      image: "/images/hero-dates-3.jpg",
+      image: "images/hero-dates-3.jpg",
     },
   ]
 

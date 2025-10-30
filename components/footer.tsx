@@ -21,7 +21,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
               <div className="bg-white/70 rounded px-0 py-0.5 shadow-sm">
                 <Image
-                  src={withBasePath("/images/new-bdf-logo.png")}
+                  src={withBasePath("images/new-bdf-logo.png")}
                   alt="Best Dates & Fruits - D&F Logo"
                   width={200}
                   height={70}
@@ -33,7 +33,7 @@ export default function Footer() {
             {/* Ramis Logo */}
             <div className="flex items-center space-x-3 rtl:space-x-reverse mt-4">
               <Image
-                src={withBasePath("/images/ramis logo.jpeg")}
+                src={withBasePath("images/ramis logo.jpeg")}
                 alt="Ramis Dattes & Fruits"
                 width={40}
                 height={40}

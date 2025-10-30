@@ -9,15 +9,15 @@ import { translations } from "@/lib/translations"
 
 const heroImages = [
   {
-    src: "/images/hero-dates-1.jpg",
+    src: "images/hero-dates-1.jpg",
     alt: "Premium Tunisian Dates",
   },
   {
-    src: "/images/hero-dates-2.jpg",
+    src: "images/hero-dates-2.jpg",
     alt: "Deglet Nour Dates",
   },
   {
-    src: "/images/hero-dates-3.jpg",
+    src: "images/hero-dates-3.jpg",
     alt: "Date Products Collection",
   },
 ]

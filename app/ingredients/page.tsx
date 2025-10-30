@@ -26,7 +26,7 @@ export default function IngredientsPage() {
         : language === "en"
         ? "Natural syrup extracted from premium dates, rich in flavors and perfect for pastry and beverages."
         : "شراب طبيعي مستخرج من التمور الفاخرة، غني بالنكهات ومثالي للحلويات والمشروبات.",
-      image: "/images/date-syrup-plate.jpeg",
+      image: "images/date-syrup-plate.jpeg",
       category: language === "fr" ? "Sirops" : language === "en" ? "Syrups" : "شراب",
       features: [
         language === "fr" ? "100% Naturel" : language === "en" ? "100% Natural" : "100% طبيعي",
@@ -42,7 +42,7 @@ export default function IngredientsPage() {
         : language === "en"
         ? "Industrial quality dates, perfect for large-scale processing and culinary preparations."
         : "تمور بجودة صناعية، مثالية للمعالجة والتحضيرات الطهوية على نطاق واسع.",
-      image: "/images/deglet-nour-standard.jpeg",
+      image: "images/deglet-nour-standard.jpeg",
       category: language === "fr" ? "Dattes" : language === "en" ? "Dates" : "تمور",
       features: [
         language === "fr" ? "Calibrage uniforme" : language === "en" ? "Uniform sizing" : "معايرة موحدة",
@@ -58,7 +58,7 @@ export default function IngredientsPage() {
         : language === "en"
         ? "Smooth date paste, ideal for manufacturing confectionery and bakery products."
         : "معجون تمر ناعم، مثالي لتصنيع الحلويات ومنتجات المخابز.",
-      image: "/images/date-paste-blocks.jpeg",
+      image: "images/date-paste-blocks.jpeg",
       category: language === "fr" ? "Pâtes" : language === "en" ? "Pastes" : "معجون",
       features: [
         language === "fr" ? "Texture homogène" : language === "en" ? "Homogeneous texture" : "قوام متجانس",
@@ -74,7 +74,7 @@ export default function IngredientsPage() {
         : language === "en"
         ? "Fine powder from dehydrated dates, perfect as natural sweetener and flavor enhancer."
         : "مسحوق ناعم من التمور المجففة، مثالي كمحلي طبيعي ومعزز للنكهة.",
-      image: "/images/date-powder.jpeg",
+      image: "images/date-powder.jpeg",
       category: language === "fr" ? "Poudres" : language === "en" ? "Powders" : "مسحوق",
       features: [
         language === "fr" ? "Soluble instantané" : language === "en" ? "Instant soluble" : "قابل للذوبان فوراً",
@@ -90,7 +90,7 @@ export default function IngredientsPage() {
         : language === "en"
         ? "Dates cut into uniform pieces, ideal for incorporation into food products."
         : "تمور مقطعة إلى قطع موحدة، مثالية للدمج في المنتجات الغذائية.",
-      image: "/images/stuffed-dates-variety.jpeg",
+      image: "images/stuffed-dates-variety.jpeg",
       category: language === "fr" ? "Dattes" : language === "en" ? "Dates" : "تمور",
       features: [
         language === "fr" ? "Taille standardisée" : language === "en" ? "Standardized size" : "حجم موحد",
@@ -166,7 +166,7 @@ export default function IngredientsPage() {
         <PageHeader
           title={t.nav.ingredients}
           description={t.ingredients.description}
-          backgroundImage="/images/deglet-nour-quality.jpeg"
+          backgroundImage="images/deglet-nour-quality.jpeg"
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" dir={isRTL ? "rtl" : "ltr"}>

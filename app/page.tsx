@@ -62,27 +62,27 @@ export default function Home() {
   const productionImages = [
     {
       id: 1,
-      src: "/images/patisserie-production-1.jpeg",
+      src: "images/patisserie-production-1.jpeg",
       alt: "Production de pâtisseries",
     },
     {
       id: 2,
-      src: "/images/patisserie-production-2.jpeg",
+      src: "images/patisserie-production-2.jpeg",
       alt: "Chaîne de production",
     },
     {
       id: 3,
-      src: "/images/patisserie-production-3.jpeg",
+      src: "images/patisserie-production-3.jpeg",
       alt: "Emballage des produits",
     },
     {
       id: 4,
-      src: "/images/production-line.jpeg",
+      src: "images/production-line.jpeg",
       alt: "Ligne de production",
     },
     {
       id: 5,
-      src: "/images/packaging-station.jpeg",
+      src: "images/packaging-station.jpeg",
       alt: "Station d'emballage",
     },
   ]

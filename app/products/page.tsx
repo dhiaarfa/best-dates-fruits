@@ -23,7 +23,7 @@ export default function ProductsPage() {
         : language === "en"
         ? "The crown of Tunisian dates, often called 'queen of dates', refers to the Deglet Nour variety. This variety is highly appreciated for its superior quality, melting flesh and unique honey taste.\n\nPackaging:\nAccording to the choice and brands of our customers, always respecting international norms and standards.\n\nCardboard box: 5, 2, 1 and 0.5 kg\nCrystal box: 500 and 200gr\nCardboard box: 2, 1 and 0.5 kg\nThe Bouquets: 2 and 0.1 kg"
         : "تاج التمور التونسية، غالباً ما يسمى 'ملكة التمور'، يشير إلى صنف دقلة نور. هذا الصنف محبوب جداً لجودته العالية ولحمه الذائب وطعمه العسلي الفريد.\n\nالتعبئة:\nحسب اختيار وعلامات عملائنا، دائماً في احترام المعايير والمواصفات الدولية.\n\nصندوق كرتوني: 5، 2، 1 و 0.5 كغ\nعلبة كريستال: 500 و 200 غرام\nعلبة كرتونية: 2، 1 و 0.5 كغ\nالباقات: 2 و 0.1 كغ",
-      image: "/images/deglet-nour-branch-natural.jpeg",
+      image: "images/deglet-nour-branch-natural.jpeg",
       category: language === "fr" ? "Branchée" : language === "en" ? "Branchée" : "متفرعة",
       inStock: true
     },
@@ -35,7 +35,7 @@ export default function ProductsPage() {
         : language === "en"
         ? "The crown of Tunisian dates, often called 'queen of dates', refers to the Deglet Nour variety. This variety is highly appreciated for its superior quality, melting flesh and unique honey taste.\n\nPackaging:\nAccording to the choice and brands of our customers, always respecting international norms and standards.\n\nCardboard box: 10 kg, 5 kg\nCardboard box: 2 kg, 1 kg and 0.5 kg"
         : "تاج التمور التونسية، غالباً ما يسمى 'ملكة التمور'، يشير إلى صنف دقلة نور. هذا الصنف محبوب جداً لجودته العالية ولحمه الذائب وطعمه العسلي الفريد.\n\nالتعبئة:\nحسب اختيار وعلامات عملائنا، دائماً في احترام المعايير والمواصفات الدولية.\n\nصندوق كرتوني: 10 كغ، 5 كغ\nعلبة كرتونية: 2 كغ، 1 كغ و 0.5 كغ",
-      image: "/images/deglet-nour-standard.jpeg",
+      image: "images/deglet-nour-standard.jpeg",
       category: language === "fr" ? "Standard" : language === "en" ? "Standard" : "عادي",
       inStock: true
     },
@@ -47,7 +47,7 @@ export default function ProductsPage() {
         : language === "en"
         ? "The crown of Tunisian dates, often called 'queen of dates', refers to the Deglet Nour variety. This variety is highly appreciated for its superior quality, melting flesh and unique honey taste.\n\nPackaging:\nAccording to the choice and brands of our customers, always respecting international norms and standards.\n\nCup: 500 g and 250 g\nWooden, cardboard or polystyrene tray: 200 g, 250 g, 400 g and 500 g"
         : "تاج التمور التونسية، غالباً ما يسمى 'ملكة التمور'، يشير إلى صنف دقلة نور. هذا الصنف محبوب جداً لجودته العالية ولحمه الذائب وطعمه العسلي الفريد.\n\nالتعبئة:\nحسب اختيار وعلامات عملائنا، دائماً في احترام المعايير والمواصفات الدولية.\n\nكوب: 500 غ و 250 غ\nصينية خشبية أو كرتونية أو بوليسترين: 200 غ، 250 غ، 400 غ و 500 غ",
-      image: "/images/dates-conditioned.jpeg",
+      image: "images/dates-conditioned.jpeg",
       category: language === "fr" ? "Conditionnées" : language === "en" ? "Packaged" : "معبأة",
       inStock: true
     },
@@ -59,7 +59,7 @@ export default function ProductsPage() {
         : language === "en"
         ? "The Alig variety is the 'big sister' of the small Khouet Alig variety, to which it is similar in color, taste and sugar content. It only differs from it by its size.\n\nPackaging:\nCardboard box: 10 kg\nPolystyrene tray: 500 g, 400 g, 250 g and 200 g\nCardboard tray: 200 g"
         : "صنف عليق هو 'الأخت الكبرى' للصنف الصغير خوت عليق، الذي يشبهه في اللون والطعم ومحتوى السكر. لا يختلف عنه إلا في الحجم.\n\nالتعبئة:\nصندوق كرتوني: 10 كغ\nصينية بوليسترين: 500 غ، 400 غ، 250 غ و 200 غ\nصينية كرتونية: 200 غ",
-      image: "/images/aligue-dates.jpeg",
+      image: "images/aligue-dates.jpeg",
       category: language === "fr" ? "Variétés Locales" : language === "en" ? "Local Varieties" : "أصناف محلية",
       inStock: true
     },
@@ -71,7 +71,7 @@ export default function ProductsPage() {
         : language === "en"
         ? "Kenta dates ripen a little earlier than other varieties. It is possible to start harvesting them from the end of September or early October. The golden and light dates have a slightly higher water content and are a little less sweet.\n\nPackaging:\nPolystyrene tray: 500 g, 400 g, 250 g and 200 g"
         : "تمور كنتا تنضج قليلاً قبل الأصناف الأخرى. من الممكن البدء في حصادها من نهاية سبتمبر أو بداية أكتوبر. التمور الذهبية والفاتحة لها محتوى مائي أعلى قليلاً وهي أقل حلاوة قليلاً.\n\nالتعبئة:\nصينية بوليسترين: 500 غ، 400 غ، 250 غ و 200 غ",
-      image: "/images/kenta-dates.jpeg",
+      image: "images/kenta-dates.jpeg",
       category: language === "fr" ? "Variétés Locales" : language === "en" ? "Local Varieties" : "أصناف محلية",
       inStock: true
     },
@@ -83,7 +83,7 @@ export default function ProductsPage() {
         : language === "en"
         ? "Pitted dates ready to eat, convenient and delicious. Ideal for culinary and industrial preparations.\n\nPackaging:\nAccording to the choice and brands of our customers, always respecting international norms and standards.\n\nCardboard box: 10 kg\nCup: 1 kg and 500 g\nTray: 500 g, 400 g and 250 g"
         : "تمور منزوعة النوى جاهزة للأكل، عملية ولذيذة. مثالية للتحضيرات الطهوية والصناعية.\n\nالتعبئة:\nحسب اختيار وعلامات عملائنا، دائماً في احترام المعايير والمواصفات الدولية.\n\nصندوق كرتوني: 10 كغ\nكوب: 1 كغ و 500 غ\nصينية: 500 غ، 400 غ و 250 غ",
-      image: "/images/dattes dénoyautées.jpg",
+      image: "images/dattes dénoyautées.jpg",
       category: language === "fr" ? "Transformées" : language === "en" ? "Processed" : "معالجة",
       inStock: true
     }
@@ -133,7 +133,7 @@ export default function ProductsPage() {
               ? "Discover our complete range of premium quality Tunisian dates"
               : "اكتشف مجموعتنا الكاملة من التمور التونسية عالية الجودة"
           }
-          backgroundImage="/images/deglet-nour-pile.jpeg"
+          backgroundImage="images/deglet-nour-pile.jpeg"
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" dir={isRTL ? "rtl" : "ltr"}>

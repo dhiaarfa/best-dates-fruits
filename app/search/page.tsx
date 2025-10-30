@@ -22,7 +22,7 @@ const allProducts = [
       fr: "Nos dattes Deglet Nour premium signature, connues pour leur goût mielleux et leur texture moelleuse.",
       ar: "تمور دقلة نور الفاخرة المميزة، المعروفة بمذاقها العسلي وقوامها الناعم.",
     },
-    image: "/images/hero-dates-1.jpg",
+    image: "images/hero-dates-1.jpg",
     price: {
       en: "$12.99",
       fr: "12,99 €",
@@ -43,7 +43,7 @@ const allProducts = [
       fr: "Assortiment de dattes biologiques présentées dans un élégant coffret cadeau, parfait pour les occasions spéciales.",
       ar: "تشكيلة متنوعة من التمور العضوية مقدمة في علبة هدايا أنيقة، مثالية للمناسبات الخاصة.",
     },
-    image: "/images/hero-dates-2.jpg",
+    image: "images/hero-dates-2.jpg",
     price: {
       en: "$24.99",
       fr: "24,99 €",
@@ -64,7 +64,7 @@ const allProducts = [
       fr: "Dattes de luxe farcies aux noix, chocolat et autres garnitures premium.",
       ar: "تمور فاخرة محشوة بالمكسرات والشوكولاتة وحشوات فاخرة أخرى.",
     },
-    image: "/images/hero-dates-3.jpg",
+    image: "images/hero-dates-3.jpg",
     price: {
       en: "$18.99",
       fr: "18,99 €",
@@ -84,7 +84,7 @@ const allProducts = [
       fr: "Sirop de dattes naturel, parfait comme édulcorant pour les desserts, les crêpes ou comme garniture.",
       ar: "شراب التمر الطبيعي، مثالي كمحلي للحلويات أو الفطائر أو كإضافة.",
     },
-    image: "/images/date-syrup.jpg",
+    image: "images/date-syrup.jpg",
     price: {
       en: "$9.99",
       fr: "9,99 €",
@@ -104,7 +104,7 @@ const allProducts = [
       fr: "Pâte de dattes 100% naturelle, parfaite pour la pâtisserie ou comme tartinade.",
       ar: "عجينة تمر طبيعية 100٪، مثالية للخبز أو كمنتشر.",
     },
-    image: "/images/date-paste.jpg",
+    image: "images/date-paste.jpg",
     price: {
       en: "$8.99",
       fr: "8,99 €",
@@ -124,7 +124,7 @@ const allProducts = [
       fr: "Dattes premium enrobées de chocolat noir, au lait ou blanc.",
       ar: "تمور فاخرة مغطاة بالشوكولاتة الداكنة الغنية أو بالحليب أو البيضاء.",
     },
-    image: "/images/chocolate-dates.jpg",
+    image: "images/chocolate-dates.jpg",
     price: {
       en: "$15.99",
       fr: "15,99 €",

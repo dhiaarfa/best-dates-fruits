@@ -16,7 +16,7 @@ export function AboutSection() {
               {/* Logo with minimal transparent background */}
               <div className="bg-white/75 px-0 py-1 rounded inline-block mb-6 shadow-md">
                 <Image
-                  src={withBasePath("/images/new-bdf-logo.png")}
+                  src={withBasePath("images/new-bdf-logo.png")}
                   alt="Best Dates & Fruits - D&F Logo"
                   width={240}
                   height={80}
@@ -59,7 +59,7 @@ export function AboutSection() {
 
           <div className="relative">
             <Image
-              src={withBasePath("/images/production-facility.jpg")}
+              src={withBasePath("images/production-facility.jpg")}
                               alt="Best Dates & Fruits Production Facility"
               width={600}
               height={400}
