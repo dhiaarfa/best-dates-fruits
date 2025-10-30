@@ -11,6 +11,7 @@ import { PageTransition } from "@/components/page-transition"
 import { BackToTop } from "@/components/back-to-top"
 import { CookieConsent } from "@/components/cookie-consent"
 import getConfig from "next/config"
+import { withBasePath } from "@/lib/paths"
 
 const SITE_URL = "https://dhiaarfa.github.io/best-dates-fruits"
 
@@ -82,15 +83,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${playfair.variable}`}>
       <head>
         {/* Favicon and other icons */}
-        <link rel="icon" href="images/new-bdf-logo.png" sizes="32x32" type="image/png" />
-        <link rel="icon" href="images/new-bdf-logo.png" sizes="16x16" type="image/png" />
-        <link rel="icon" href="images/new-bdf-logo.png" sizes="192x192" type="image/png" />
-        <link rel="icon" href="images/new-bdf-logo.png" sizes="512x512" type="image/png" />
-        <link rel="apple-touch-icon" href="images/new-bdf-logo.png" sizes="180x180" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href={withBasePath("images/new-bdf-logo.png")} sizes="32x32" type="image/png" />
+        <link rel="icon" href={withBasePath("images/new-bdf-logo.png")} sizes="16x16" type="image/png" />
+        <link rel="icon" href={withBasePath("images/new-bdf-logo.png")} sizes="192x192" type="image/png" />
+        <link rel="icon" href={withBasePath("images/new-bdf-logo.png")} sizes="512x512" type="image/png" />
+        <link rel="apple-touch-icon" href={withBasePath("images/new-bdf-logo.png")} sizes="180x180" />
+        <link rel="manifest" href={withBasePath("manifest.json")} />
         <meta name="theme-color" content="#8B4513" />
         <meta name="msapplication-TileColor" content="#8B4513" />
-        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-config" content={withBasePath("browserconfig.xml")} />
       </head>
       <body className={`${inter.className} font-inter antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
