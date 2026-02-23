@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { withBasePath } from "@/lib/paths"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { getTranslation } from "@/lib/translations"
 import { Card, CardContent } from "@/components/ui/card"
 import { Factory, Package, CheckCircle, Globe } from "lucide-react"

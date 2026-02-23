@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { getTranslation } from "@/lib/translations"
 
 const Newsletter = () => {

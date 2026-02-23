@@ -1,7 +1,6 @@
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import { PageHeader } from "@/components/page-header"
-import { Breadcrumbs } from "@/components/breadcrumbs"
+import Footer from "@/components/layout/footer"
+import { PageHeader } from "@/components/layout/page-header"
+import { Breadcrumbs } from "@/components/layout/breadcrumbs"
 
 export const metadata = {
   title: "Privacy Policy | Best Dates & Fruits",
@@ -11,7 +10,7 @@ export const metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen flex flex-col">
-      <Navbar />
+
 
       <div className="pt-24 pb-16">
         <PageHeader

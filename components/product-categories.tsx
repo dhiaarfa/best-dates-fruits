@@ -2,9 +2,10 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { getTranslation } from "@/lib/translations"
 import { Card, CardContent } from "@/components/ui/card"
+import { withBasePath } from "@/lib/paths"
 
 const ProductCategories = () => {
   const { language } = useLanguage()
@@ -52,7 +53,7 @@ const ProductCategories = () => {
         fr: "Boules d'énergie naturelles faites avec des dattes, noix et graines pour une collation saine.",
         ar: "كرات طاقة طبيعية مصنوعة من التمر والمكسرات والبذور لخيار وجبة خفيفة صحية.",
       },
-      image: "images/pistachio-date-balls.jpg",
+      image: "images/pistachio-date-balls.jpeg",
       link: `/${language === "en" ? "" : language + "/"}products/energy-balls`,
     },
     {
@@ -88,7 +89,7 @@ const ProductCategories = () => {
               <Card className="h-full overflow-hidden border-none shadow-md hover:shadow-lg transition-all hover:translate-y-[-5px]">
                 <div className="relative h-48 w-full">
                   <Image
-                    src={category.image || "/placeholder.svg"}
+                    src={withBasePath(category.image || "/placeholder.svg")}
                     alt={category.name[language]}
                     fill
                     className="object-cover"

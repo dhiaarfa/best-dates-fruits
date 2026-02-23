@@ -2,43 +2,46 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Navbar from "@/components/navbar"
-import { PageHeader } from "@/components/page-header"
-import { Breadcrumbs } from "@/components/breadcrumbs"
+import { useRouter } from "next/navigation"
+
+import { PageHeader } from "@/components/layout/page-header"
+import { Breadcrumbs } from "@/components/layout/breadcrumbs"
 import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { translations } from "@/lib/translations"
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { withBasePath } from "@/lib/paths"
+import { ChevronLeft, ChevronRight, X } from "lucide-react"
 
 export default function FruitsPage() {
   const { language } = useLanguage()
   const t = translations[language]
   const isRTL = language === "ar"
+  const router = useRouter()
 
   const fruitImages = [
-    "images/fresh-peaches-display.jpeg",
-    "images/ramy-pomegranate.jpeg",
-    "images/strawberry-field.jpeg",
-    "images/prickly-pear-crates.jpeg",
-    "images/prickly-pear-peeling.jpeg",
-    "images/melon-market.jpeg",
-    "images/strawberries-packaged.jpeg",
-    "images/pomegranates-fresh.jpeg",
-    "images/peaches-display.jpeg",
-    "images/peaches-hand-quality.jpeg",
-    "images/strawberry-single.jpeg",
-    "images/apples-bulk.jpeg",
-    "images/red-apples-crate.jpeg",
-    "images/apples-pyramid-display.jpeg",
-    "images/dates-palm-branches.jpeg",
-    "images/flat-peaches-crate.jpeg",
-    "images/single-watermelon.jpeg",
-    "images/strawberries-field-flowers.jpeg",
-    "images/prickly-pear-colorful.jpeg",
-    "images/apples-crates-storage.jpeg",
-    "images/strawberry-field-harvest.jpeg",
-    "images/cantaloupe-field.jpeg",
-    "images/prickly-pear-variety.jpeg"
+    withBasePath("images/fresh-peaches-display.jpeg"),
+    withBasePath("images/ramy-pomegranate.jpeg"),
+    withBasePath("images/strawberry-field.jpeg"),
+    withBasePath("images/prickly-pear-crates.jpeg"),
+    withBasePath("images/prickly-pear-peeling.jpeg"),
+    withBasePath("images/melon-market.jpeg"),
+    withBasePath("images/strawberries-packaged.jpeg"),
+    withBasePath("images/pomegranates-fresh.jpeg"),
+    withBasePath("images/peaches-display.jpeg"),
+    withBasePath("images/peaches-hand-quality.jpeg"),
+    withBasePath("images/strawberry-single.jpeg"),
+    withBasePath("images/apples-bulk.jpeg"),
+    withBasePath("images/red-apples-crate.jpeg"),
+    withBasePath("images/apples-pyramid-display.jpeg"),
+    withBasePath("images/dates-palm-branches.jpeg"),
+    withBasePath("images/flat-peaches-crate.jpeg"),
+    withBasePath("images/single-watermelon.jpeg"),
+    withBasePath("images/strawberries-field-flowers.jpeg"),
+    withBasePath("images/prickly-pear-colorful.jpeg"),
+    withBasePath("images/apples-crates-storage.jpeg"),
+    withBasePath("images/strawberry-field-harvest.jpeg"),
+    withBasePath("images/cantaloupe-field.jpeg"),
+    withBasePath("images/prickly-pear-variety.jpeg"),
   ]
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -85,13 +88,13 @@ export default function FruitsPage() {
           ? "Hello, I would like to get detailed information and a quote for your fresh fruits.\n\nPlease contact me with your best terms."
           : "مرحباً، أود الحصول على معلومات مفصلة وعرض سعر للفواكه الطازجة الخاصة بكم.\n\nيرجى التواصل معي بأفضل شروطكم.",
     )
-    window.location.href = `/contact?subject=${subject}&message=${body}`
+    router.push(`/contact?subject=${subject}&message=${body}`)
   }
 
   return (
-    <main className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
-      <Navbar />
-      
+    <main className="min-h-screen flex flex-col bg-background">
+
+
       <div className="pt-24 pb-16">
         <Breadcrumbs
           items={[
@@ -106,8 +109,8 @@ export default function FruitsPage() {
             language === "fr"
               ? "Découvrez notre sélection de fruits frais de saison"
               : language === "en"
-              ? "Discover our selection of fresh seasonal fruits"
-              : "اكتشف مجموعتنا من الفواكه الطازجة الموسمية"
+                ? "Discover our selection of fresh seasonal fruits"
+                : "اكتشف مجموعتنا من الفواكه الطازجة الموسمية"
           }
           backgroundImage="images/deglet-nour-dates.jpeg"
         />
@@ -142,9 +145,8 @@ export default function FruitsPage() {
                   src={src || "/placeholder.svg"}
                   alt={`${language === "fr" ? "Fruit" : language === "en" ? "Fruit" : "فاكهة"} ${index + 1}`}
                   fill
-                  className={`object-cover transition-all duration-500 group-hover:scale-110 ${
-                    imageLoadStates[src] ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`object-cover transition-all duration-500 group-hover:scale-110 ${imageLoadStates[src] ? "opacity-100" : "opacity-0"
+                    }`}
                   onLoad={() => handleImageLoad(src)}
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   priority={index < 8}
@@ -194,7 +196,7 @@ export default function FruitsPage() {
             >
               <X className="w-8 h-8" />
             </button>
-            
+
             <div className="relative">
               <Image
                 src={selectedImage || "/placeholder.svg"}
@@ -203,14 +205,14 @@ export default function FruitsPage() {
                 height={600}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
-              
+
               <button
                 onClick={goToPrevious}
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors backdrop-blur-sm"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              
+
               <button
                 onClick={goToNext}
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors backdrop-blur-sm"
@@ -218,7 +220,7 @@ export default function FruitsPage() {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
-            
+
             <div className="text-center mt-4 text-white">
               <p className="text-sm opacity-75">
                 {currentIndex + 1} / {fruitImages.length}

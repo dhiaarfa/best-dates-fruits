@@ -1,10 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { getTranslation } from "@/lib/translations"
 import { Card, CardContent } from "@/components/ui/card"
 import { CalendarDays, MapPin } from "lucide-react"
+import { withBasePath } from "@/lib/paths"
 
 const ExhibitionsSection = () => {
   const { language } = useLanguage()
@@ -27,7 +28,7 @@ const ExhibitionsSection = () => {
         fr: "Paris, France",
         ar: "باريس، فرنسا",
       },
-      image: "images/hero-dates-1.jpg",
+      image: "images/packaging-showcase.jpg",
     },
     {
       id: 2,
@@ -46,7 +47,7 @@ const ExhibitionsSection = () => {
         fr: "Dubaï, EAU",
         ar: "دبي، الإمارات العربية المتحدة",
       },
-      image: "images/hero-dates-2.jpg",
+      image: "images/nakkla-packaging.jpg",
     },
     {
       id: 3,
@@ -65,7 +66,7 @@ const ExhibitionsSection = () => {
         fr: "Cologne, Allemagne",
         ar: "كولون، ألمانيا",
       },
-      image: "images/hero-dates-3.jpg",
+      image: "images/elegant-gift-box.jpg",
     },
   ]
 
@@ -84,7 +85,7 @@ const ExhibitionsSection = () => {
             <Card key={exhibition.id} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-all">
               <div className="relative h-48 w-full">
                 <Image
-                  src={exhibition.image || "/placeholder.svg"}
+                  src={withBasePath(exhibition.image || "/placeholder.svg")}
                   alt={exhibition.name[language]}
                   fill
                   className="object-cover"

@@ -1,7 +1,7 @@
 "use client"
 
 import { MapPin, Phone, Mail, Clock, Building } from "lucide-react"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 
 export function LocationSection() {
   const { language } = useLanguage()

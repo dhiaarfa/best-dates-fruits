@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { getTranslation } from "@/lib/translations"
 
 const CTASection = () => {

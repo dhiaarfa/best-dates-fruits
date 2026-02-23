@@ -70,22 +70,23 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom brand colors - BD&F theme
-        "bdf-gold": "#FF6B35", // Vibrant orange
-        "bdf-darkgold": "#E55A2B", // Darker orange
-        "bdf-brown": "#8B4513", // Dark brown
-        "bdf-light-brown": "#A0522D", // Light brown
+        // Custom brand colors - Best Dates & Fruits
+        // Aligned with new logo (warm brown-gold)
+        "bdf-gold": "#8D5B1A", // Primary brand brown-gold
+        "bdf-darkgold": "#6F4311", // Deeper accent
+        "bdf-brown": "#4B2A0B", // Dark brown for rich accents
+        "bdf-light-brown": "#D9A15E", // Soft golden highlight
         gold: {
-          50: "#FFFBEB",
-          100: "#FEF3C7",
-          200: "#FDE68A",
-          300: "#FCD34D",
-          400: "#FBBF24",
-          500: "#F59E0B",
-          600: "#D97706",
-          700: "#B45309",
-          800: "#92400E",
-          900: "#78350F",
+          50: "#FBF4E8",
+          100: "#F6E7D0",
+          200: "#F0D4A8",
+          300: "#E9BE7E",
+          400: "#E0A75A",
+          500: "#D7923C",
+          600: "#B97430",
+          700: "#965926",
+          800: "#70401C",
+          900: "#4A2A13",
         },
       },
       borderRadius: {
@@ -94,7 +95,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        inter: ["var(--font-inter)", "sans-serif"],
+        inter: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         playfair: ["var(--font-playfair)", "serif"],
       },
       keyframes: {

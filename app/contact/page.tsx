@@ -1,12 +1,11 @@
 "use client"
 
 import { Suspense } from "react"
-import Navbar from "@/components/navbar"
-import { PageHeader } from "@/components/page-header"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { ContactForm } from "@/components/contact-form"
-import { LocationSection } from "@/components/location-section"
-import { useLanguage } from "@/components/language-provider"
+import { PageHeader } from "@/components/layout/page-header"
+import { Breadcrumbs } from "@/components/layout/breadcrumbs"
+import { ContactForm } from "@/components/forms/contact-form"
+import { LocationSection } from "@/components/sections/location-section"
+import { useLanguage } from "@/components/providers/language-provider"
 import { translations } from "@/lib/translations"
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 
@@ -16,9 +15,9 @@ function ContactPageContent() {
   const isRTL = language === "ar"
 
   return (
-    <main className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
-      <Navbar />
-      
+    <main className="min-h-screen flex flex-col bg-background">
+
+
       <div className="pt-24 pb-16">
         <Breadcrumbs
           items={[
@@ -33,10 +32,10 @@ function ContactPageContent() {
             language === "fr"
               ? "Contactez-nous pour toute demande d'information ou de devis"
               : language === "en"
-              ? "Contact us for any information request or quote"
-              : "اتصل بنا لأي طلب معلومات أو عرض سعر"
+                ? "Contact us for any information request or quote"
+                : "اتصل بنا لأي طلب معلومات أو عرض سعر"
           }
-          backgroundImage="/images/production-facility.jpg"
+          backgroundImage="images/production-facility.jpg"
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" dir={isRTL ? "rtl" : "ltr"}>
@@ -47,7 +46,7 @@ function ContactPageContent() {
                 <h2 className="text-3xl font-playfair font-bold mb-6 text-gray-900 dark:text-white">
                   {language === "fr" ? "Informations de contact" : language === "en" ? "Contact Information" : "معلومات الاتصال"}
                 </h2>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4 rtl:space-x-reverse">
                     <div className="flex-shrink-0">
@@ -58,11 +57,11 @@ function ContactPageContent() {
                         {language === "fr" ? "Adresse" : language === "en" ? "Address" : "العنوان"}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-300">
-                        {language === "fr" 
+                        {language === "fr"
                           ? "Zone Industrielle, Tozeur, Tunisie"
                           : language === "en"
-                          ? "Industrial Zone, Tozeur, Tunisia"
-                          : "المنطقة الصناعية، توزر، تونس"}
+                            ? "Industrial Zone, Tozeur, Tunisia"
+                            : "المنطقة الصناعية، توزر، تونس"}
                       </p>
                     </div>
                   </div>
@@ -112,11 +111,11 @@ function ContactPageContent() {
                         {language === "fr" ? "Horaires" : language === "en" ? "Business Hours" : "ساعات العمل"}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-300">
-                        {language === "fr" 
+                        {language === "fr"
                           ? "Lun - Ven: 8h00 - 17h00"
                           : language === "en"
-                          ? "Mon - Fri: 8:00 AM - 5:00 PM"
-                          : "الإثنين - الجمعة: 8:00 ص - 5:00 م"}
+                            ? "Mon - Fri: 8:00 AM - 5:00 PM"
+                            : "الإثنين - الجمعة: 8:00 ص - 5:00 م"}
                       </p>
                     </div>
                   </div>
@@ -130,25 +129,25 @@ function ContactPageContent() {
                 </h3>
                 <ul className="space-y-2 text-sm text-amber-700 dark:text-amber-300">
                   <li>
-                    {language === "fr" 
+                    {language === "fr"
                       ? "• Réponse garantie sous 24h"
                       : language === "en"
-                      ? "• Guaranteed response within 24h"
-                      : "• رد مضمون خلال 24 ساعة"}
+                        ? "• Guaranteed response within 24h"
+                        : "• رد مضمون خلال 24 ساعة"}
                   </li>
                   <li>
-                    {language === "fr" 
+                    {language === "fr"
                       ? "• Devis gratuit et personnalisé"
                       : language === "en"
-                      ? "• Free and personalized quote"
-                      : "• عرض سعر مجاني ومخصص"}
+                        ? "• Free and personalized quote"
+                        : "• عرض سعر مجاني ومخصص"}
                   </li>
                   <li>
-                    {language === "fr" 
+                    {language === "fr"
                       ? "• Support multilingue disponible"
                       : language === "en"
-                      ? "• Multilingual support available"
-                      : "• دعم متعدد اللغات متاح"}
+                        ? "• Multilingual support available"
+                        : "• دعم متعدد اللغات متاح"}
                   </li>
                 </ul>
               </div>
@@ -172,7 +171,7 @@ function ContactPageContent() {
 
 export default function ContactPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-white dark:bg-gray-900"></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-background"></div>}>
       <ContactPageContent />
     </Suspense>
   )

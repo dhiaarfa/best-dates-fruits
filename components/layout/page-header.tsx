@@ -1,6 +1,7 @@
 "use client"
 
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
+import { withBasePath } from "@/lib/paths"
 
 interface PageHeaderProps {
   title: string
@@ -18,7 +19,7 @@ export function PageHeader({ title, description, backgroundImage }: PageHeaderPr
       {backgroundImage && (
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+          style={{ backgroundImage: `url(${withBasePath(backgroundImage)})` }}
         />
       )}
 

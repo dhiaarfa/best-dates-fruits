@@ -1,7 +1,7 @@
 "use client"
 
 import { ProductCard } from "@/components/product-card"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 
 export function FeaturedProducts() {
   const { language } = useLanguage()
@@ -101,16 +101,12 @@ export function FeaturedProducts() {
           {featuredProducts.map((product) => (
             <ProductCard
               key={product.id}
-              id={product.id}
-              name={product.name}
-              description={product.description}
-              image={product.image}
-              price={product.price}
-              numericPrice={product.numericPrice}
-              link={product.link}
-              isNew={product.isNew}
-              isFeatured={product.isFeatured}
-              category={product.category}
+              product={{
+                ...product,
+                name: product.name[language],
+                description: product.description[language],
+                price: product.price[language],
+              }}
             />
           ))}
         </div>

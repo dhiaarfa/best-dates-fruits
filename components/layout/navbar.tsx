@@ -4,22 +4,20 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { withBasePath } from "@/lib/paths"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, Globe, Instagram, Facebook, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { SearchBar } from "@/components/search-bar"
+import { SearchBar } from "@/components/forms/search-bar"
 import { ShoppingCart } from "@/components/shopping-cart"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 
 const Navbar = () => {
   const { language, setLanguage } = useLanguage()
   const pathname = usePathname()
-  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
   const isRTL = language === "ar"
 
   // Handle scroll effect with throttling for better performance
@@ -37,11 +35,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsMenuOpen(false)
-  }, [pathname])
 
   const navItems = [
     {
@@ -123,16 +116,6 @@ const Navbar = () => {
 
   const currentLanguage = languages.find((lang) => lang.code === language)
 
-  const handleNavigation = async (href: string) => {
-    setIsLoading(true)
-    setIsMenuOpen(false)
-
-    // Add a small delay for smooth transition
-    await new Promise((resolve) => setTimeout(resolve, 100))
-    router.push(href)
-    setIsLoading(false)
-  }
-
   const handleLanguageChange = (newLanguage: string) => {
     setLanguage(newLanguage as any)
     setIsLanguageOpen(false)
@@ -146,9 +129,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "navbar-glass shadow-lg backdrop-blur-xl" : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "navbar-glass shadow-lg backdrop-blur-xl" : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
+        }`}
       dir={isRTL ? "rtl" : "ltr"}
     >
       <div className="container mx-auto px-4">
@@ -158,12 +140,12 @@ const Navbar = () => {
             href={`/${language === "fr" ? "" : language}`}
             className="flex items-center space-x-3 group transition-transform duration-200 hover:scale-105"
           >
-            <div className="bg-white/80 rounded px-0.5 py-1 shadow-sm group-hover:shadow-md transition-all duration-200">
+            <div className="bg-white/80 rounded px-1.5 py-1 shadow-sm group-hover:shadow-md transition-all duration-200">
               <Image
-                src={withBasePath("images/new-bdf-logo.png")}
-                alt="Best Dates & Fruits - D&F Logo"
-                width={280}
-                height={100}
+                src={withBasePath("images/logo-full.svg")}
+                alt="Best Dates & Fruits Logo"
+                width={260}
+                height={90}
                 className="h-14 w-auto transition-all duration-200 object-contain"
                 priority
               />
@@ -173,21 +155,21 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.href}
-                onClick={() => handleNavigation(item.href)}
+                href={item.href}
+                prefetch
                 className={`text-sm font-medium transition-colors hover:text-bdf-gold relative py-2 font-inter ${
                   pathname === item.href
                     ? "text-bdf-gold"
                     : "text-gray-700 dark:text-gray-300 hover:text-bdf-gold dark:hover:text-bdf-gold"
                 }`}
-                disabled={isLoading}
               >
                 {item.name[language as keyof typeof item.name]}
                 {pathname === item.href && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-bdf-gold rounded-full"></span>
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-bdf-gold rounded-full" />
                 )}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -239,9 +221,8 @@ const Navbar = () => {
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className={`w-full text-left px-4 py-3 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3 transition-all duration-200 font-inter ${
-                        language === lang.code ? "bg-bdf-gold/10 text-bdf-gold" : "text-gray-700 dark:text-gray-300"
-                      }`}
+                      className={`w-full text-left px-4 py-3 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3 transition-all duration-200 font-inter ${language === lang.code ? "bg-bdf-gold/10 text-bdf-gold" : "text-gray-700 dark:text-gray-300"
+                        }`}
                     >
                       <span className="text-lg">{lang.flag}</span>
                       <span>{lang.name}</span>
@@ -272,19 +253,20 @@ const Navbar = () => {
           <div className="lg:hidden border-t border-gray-200 dark:border-gray-700 py-4 animate-fade-in">
             <div className="flex flex-col space-y-3">
               {navItems.map((item, index) => (
-                <button
+                <Link
                   key={item.href}
-                  onClick={() => handleNavigation(item.href)}
+                  href={item.href}
+                  prefetch
+                  onClick={() => setIsMenuOpen(false)}
                   className={`text-sm font-medium py-3 px-4 rounded-2xl transition-all duration-200 text-left animate-slide-in-right font-inter ${
                     pathname === item.href
                       ? "bg-bdf-gold/10 text-bdf-gold"
                       : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                   }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
-                  disabled={isLoading}
                 >
                   {item.name[language as keyof typeof item.name]}
-                </button>
+                </Link>
               ))}
 
               {/* Social Links - Mobile */}
@@ -314,10 +296,6 @@ const Navbar = () => {
       {/* Overlay for language dropdown */}
       {isLanguageOpen && <div className="fixed inset-0 z-40" onClick={() => setIsLanguageOpen(false)} />}
 
-      {/* Loading indicator */}
-      {isLoading && (
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-bdf-gold to-bdf-darkgold animate-pulse"></div>
-      )}
     </nav>
   )
 }

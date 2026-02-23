@@ -1,12 +1,12 @@
 "use client"
 
-import Navbar from "@/components/navbar"
+
 import Image from "next/image"
-import { PageHeader } from "@/components/page-header"
-import { Breadcrumbs } from "@/components/breadcrumbs"
+import { PageHeader } from "@/components/layout/page-header"
+import { Breadcrumbs } from "@/components/layout/breadcrumbs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { Play, Calendar, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -121,7 +121,7 @@ export default function LivePage() {
 
   return (
     <main className="min-h-screen flex flex-col">
-      <Navbar />
+
 
       <div className="pt-24 pb-16">
         <PageHeader

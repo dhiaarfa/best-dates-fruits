@@ -2,13 +2,14 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Navbar from "@/components/navbar"
-import { PageHeader } from "@/components/page-header"
-import { Breadcrumbs } from "@/components/breadcrumbs"
+
+import { PageHeader } from "@/components/layout/page-header"
+import { Breadcrumbs } from "@/components/layout/breadcrumbs"
 import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { translations } from "@/lib/translations"
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { withBasePath } from "@/lib/paths"
+import { ChevronLeft, ChevronRight, X } from "lucide-react"
 
 export default function PastriesPage() {
   const { language } = useLanguage()
@@ -16,32 +17,32 @@ export default function PastriesPage() {
   const isRTL = language === "ar"
 
   const pastryImages = [
-    "images/stuffed-date-single.jpeg",
-    "images/dates-artistic-display.jpeg",
-    "images/colorful-stuffed-dates.jpeg",
-    "images/elegant-dates-platter.jpeg",
-    "images/pistachio-stuffed-date.jpeg",
-    "images/mixed-nuts-stuffed-date.jpeg",
-    "images/pistachio-date-cross-section.jpeg",
-    "images/stuffed-dates-walnuts-pistachios.jpeg",
-    "images/pistachio-covered-pastry.jpeg",
-    "images/assorted-stuffed-dates-tray.jpeg",
-    "images/elegant-dates-silver-tray.jpeg",
-    "images/golden-wrapped-chocolates.jpeg",
-    "images/decorated-dates-glass-plate.jpeg",
-    "images/pistachio-date-balls.jpeg",
-    "images/golden-chocolates-cups.jpeg",
-    "images/premium-stuffed-dates-container.jpeg",
-    "images/elegant-pastry-boxes.jpeg",
-    "images/ferrero-style-dates.jpeg",
-    "images/white-decorated-dates-box.jpeg",
-    "images/golden-tray-dates.jpeg",
-    "images/luxury-wedding-dates.jpeg",
-    "images/golden-tin-dates.jpeg",
-    "images/tulle-wrapped-dates.jpeg",
-    "images/black-tray-leaf-dates.jpeg",
-    "images/elegant-flower-dates.jpeg",
-    "images/papa-celebration-dates.jpeg"
+    withBasePath("images/stuffed-date-single.jpeg"),
+    withBasePath("images/dates-artistic-display.jpeg"),
+    withBasePath("images/colorful-stuffed-dates.jpeg"),
+    withBasePath("images/elegant-dates-platter.jpeg"),
+    withBasePath("images/pistachio-stuffed-date.jpeg"),
+    withBasePath("images/mixed-nuts-stuffed-date.jpeg"),
+    withBasePath("images/pistachio-date-cross-section.jpeg"),
+    withBasePath("images/stuffed-dates-walnuts-pistachios.jpeg"),
+    withBasePath("images/pistachio-covered-pastry.jpeg"),
+    withBasePath("images/assorted-stuffed-dates-tray.jpeg"),
+    withBasePath("images/elegant-dates-silver-tray.jpeg"),
+    withBasePath("images/golden-wrapped-chocolates.jpeg"),
+    withBasePath("images/decorated-dates-glass-plate.jpeg"),
+    withBasePath("images/pistachio-date-balls.jpeg"),
+    withBasePath("images/golden-chocolates-cups.jpeg"),
+    withBasePath("images/premium-stuffed-dates-container.jpeg"),
+    withBasePath("images/elegant-pastry-boxes.jpeg"),
+    withBasePath("images/ferrero-style-dates.jpeg"),
+    withBasePath("images/white-decorated-dates-box.jpeg"),
+    withBasePath("images/golden-tray-dates.jpeg"),
+    withBasePath("images/luxury-wedding-dates.jpeg"),
+    withBasePath("images/golden-tin-dates.jpeg"),
+    withBasePath("images/tulle-wrapped-dates.jpeg"),
+    withBasePath("images/black-tray-leaf-dates.jpeg"),
+    withBasePath("images/elegant-flower-dates.jpeg"),
+    withBasePath("images/papa-celebration-dates.jpeg"),
   ]
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -92,9 +93,9 @@ export default function PastriesPage() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
-      <Navbar />
-      
+    <main className="min-h-screen flex flex-col bg-background">
+
+
       <div className="pt-24 pb-16">
         <Breadcrumbs
           items={[
@@ -109,8 +110,8 @@ export default function PastriesPage() {
             language === "fr"
               ? "Découvrez notre collection de pâtisseries artisanales aux dattes"
               : language === "en"
-              ? "Discover our collection of artisanal date pastries"
-              : "اكتشف مجموعتنا من حلويات التمر الحرفية"
+                ? "Discover our collection of artisanal date pastries"
+                : "اكتشف مجموعتنا من حلويات التمر الحرفية"
           }
           backgroundImage="images/colorful-stuffed-dates.jpeg"
         />
@@ -145,9 +146,8 @@ export default function PastriesPage() {
                   src={src || "/placeholder.svg"}
                   alt={`${language === "fr" ? "Pâtisserie" : language === "en" ? "Pastry" : "حلوى"} ${index + 1}`}
                   fill
-                  className={`object-cover transition-all duration-500 group-hover:scale-110 ${
-                    imageLoadStates[src] ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`object-cover transition-all duration-500 group-hover:scale-110 ${imageLoadStates[src] ? "opacity-100" : "opacity-0"
+                    }`}
                   onLoad={() => handleImageLoad(src)}
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   priority={index < 8}
@@ -197,7 +197,7 @@ export default function PastriesPage() {
             >
               <X className="w-8 h-8" />
             </button>
-            
+
             <div className="relative">
               <Image
                 src={selectedImage || "/placeholder.svg"}
@@ -206,14 +206,14 @@ export default function PastriesPage() {
                 height={600}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
-              
+
               <button
                 onClick={goToPrevious}
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors backdrop-blur-sm"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              
+
               <button
                 onClick={goToNext}
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors backdrop-blur-sm"
@@ -221,7 +221,7 @@ export default function PastriesPage() {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
-            
+
             <div className="text-center mt-4 text-white">
               <p className="text-sm opacity-75">
                 {currentIndex + 1} / {pastryImages.length}

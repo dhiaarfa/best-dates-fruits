@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
-import Navbar from "@/components/navbar"
+
 import { ProductCard } from "@/components/product-card"
-import { PageHeader } from "@/components/page-header"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { useLanguage } from "@/components/language-provider"
+import { PageHeader } from "@/components/layout/page-header"
+import { Breadcrumbs } from "@/components/layout/breadcrumbs"
+import { useLanguage } from "@/components/providers/language-provider"
 
 // Sample product data (in a real app, this would come from an API or database)
 const allProducts = [
@@ -22,7 +22,7 @@ const allProducts = [
       fr: "Nos dattes Deglet Nour premium signature, connues pour leur goût mielleux et leur texture moelleuse.",
       ar: "تمور دقلة نور الفاخرة المميزة، المعروفة بمذاقها العسلي وقوامها الناعم.",
     },
-    image: "images/hero-dates-1.jpg",
+    image: "images/deglet-nour-natural.jpeg",
     price: {
       en: "$12.99",
       fr: "12,99 €",
@@ -43,7 +43,7 @@ const allProducts = [
       fr: "Assortiment de dattes biologiques présentées dans un élégant coffret cadeau, parfait pour les occasions spéciales.",
       ar: "تشكيلة متنوعة من التمور العضوية مقدمة في علبة هدايا أنيقة، مثالية للمناسبات الخاصة.",
     },
-    image: "images/hero-dates-2.jpg",
+    image: "images/elegant-gift-box.jpg",
     price: {
       en: "$24.99",
       fr: "24,99 €",
@@ -64,7 +64,7 @@ const allProducts = [
       fr: "Dattes de luxe farcies aux noix, chocolat et autres garnitures premium.",
       ar: "تمور فاخرة محشوة بالمكسرات والشوكولاتة وحشوات فاخرة أخرى.",
     },
-    image: "images/hero-dates-3.jpg",
+    image: "images/stuffed-dates-variety-tray.jpeg",
     price: {
       en: "$18.99",
       fr: "18,99 €",
@@ -104,7 +104,7 @@ const allProducts = [
       fr: "Pâte de dattes 100% naturelle, parfaite pour la pâtisserie ou comme tartinade.",
       ar: "عجينة تمر طبيعية 100٪، مثالية للخبز أو كمنتشر.",
     },
-    image: "images/date-paste.jpg",
+    image: "images/date-paste-blocks.jpeg",
     price: {
       en: "$8.99",
       fr: "8,99 €",
@@ -141,7 +141,8 @@ export default function SearchPage() {
   const { language } = useLanguage()
   const isRTL = language === "ar"
 
-  const [searchResults, setSearchResults] = useState([])
+  type Product = typeof allProducts[0]
+  const [searchResults, setSearchResults] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -183,7 +184,7 @@ export default function SearchPage() {
 
   return (
     <main className="min-h-screen flex flex-col">
-      <Navbar />
+
 
       <div className="pt-24 pb-16">
         <PageHeader
@@ -206,11 +207,11 @@ export default function SearchPage() {
               },
               ...(query
                 ? [
-                    {
-                      label: query,
-                      href: `/${language === "en" ? "" : language + "/"}search?q=${encodeURIComponent(query)}`,
-                    },
-                  ]
+                  {
+                    label: query,
+                    href: `/${language === "en" ? "" : language + "/"}search?q=${encodeURIComponent(query)}`,
+                  },
+                ]
                 : []),
             ]}
           />

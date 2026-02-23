@@ -2,23 +2,24 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { withBasePath } from "@/lib/paths"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Star, Award, Truck, Shield } from "lucide-react"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { translations } from "@/lib/translations"
 
 const heroImages = [
   {
-    src: "images/hero-dates-1.jpg",
-    alt: "Premium Tunisian Dates",
+    src: "images/natural-dates-hero.jpeg",
+    alt: "Premium Tunisian dates",
   },
   {
-    src: "images/hero-dates-2.jpg",
-    alt: "Deglet Nour Dates",
+    src: "images/deglet-nour-natural.jpeg",
+    alt: "Deglet Nour dates close-up",
   },
   {
-    src: "images/hero-dates-3.jpg",
-    alt: "Date Products Collection",
+    src: "images/dates-artistic-display.jpeg",
+    alt: "Dates arranged in an elegant display",
   },
 ]
 
@@ -62,18 +63,17 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 dark:from-amber-950/20 dark:via-orange-950/20 dark:to-red-950/20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gold-50 via-gold-100 to-bdf-light-brown/15 dark:from-bdf-brown dark:via-bdf-darkgold/60 dark:to-black">
       {/* Background Image Carousel */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImage ? "opacity-30" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImage ? "opacity-30" : "opacity-0"
+              }`}
           >
             <Image
-              src={image.src || "/placeholder.svg"}
+              src={withBasePath(image.src || "/placeholder.svg")}
               alt={image.alt}
               fill
               className="object-cover"
@@ -107,9 +107,8 @@ export default function HeroSection() {
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              index === currentImage ? "bg-white scale-110" : "bg-white/50 hover:bg-white/70"
-            }`}
+            className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentImage ? "bg-white scale-110" : "bg-white/50 hover:bg-white/70"
+              }`}
             aria-label={`Go to image ${index + 1}`}
           />
         ))}
@@ -120,7 +119,7 @@ export default function HeroSection() {
         <div className="animate-fade-in">
           {/* Slogan - Now positioned above the main content */}
           <div className="mb-8">
-            <p className="text-xl md:text-2xl lg:text-3xl font-playfair font-medium text-amber-100 mb-2 animate-slide-up">
+            <p className="text-xl md:text-2xl lg:text-3xl font-playfair font-medium text-gold-100 mb-2 animate-slide-up">
               {t.hero.slogan}
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full" />
@@ -144,14 +143,14 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-bdf-gold to-bdf-light-brown hover:from-bdf-darkgold hover:to-bdf-gold text-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               {t.hero.cta_primary}
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-8 py-4 text-lg rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-105 bg-transparent"
+              className="border-2 border-gold-200 text-gold-50 hover:bg-gold-100 hover:text-bdf-brown font-semibold px-8 py-4 text-lg rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-105 bg-transparent"
             >
               {t.hero.cta_secondary}
             </Button>
@@ -166,7 +165,7 @@ export default function HeroSection() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <feature.icon className="w-8 h-8 text-amber-300 mb-2" />
-                <span className="text-white text-sm font-medium text-center">{t.hero.features[feature.key]}</span>
+                <span className="text-white text-sm font-medium text-center">{t.hero.features[feature.key as keyof typeof t.hero.features]}</span>
               </div>
             ))}
           </div>

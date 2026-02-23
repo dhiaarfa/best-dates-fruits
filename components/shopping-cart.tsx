@@ -5,7 +5,7 @@ import { ShoppingCartIcon as CartIcon, X, Plus, Minus, Trash2, CheckCircle } fro
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useCart } from "@/contexts/cart-context"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import Image from "next/image"
 
 export function ShoppingCart() {
@@ -106,9 +106,8 @@ export function ShoppingCart() {
           className={`fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity duration-200 ${isAnimating ? "opacity-0" : "opacity-100"}`}
         >
           <div
-            className={`cart-container fixed right-0 top-0 h-full w-full max-w-md bg-white dark:bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-out ${
-              isAnimating ? "translate-x-full" : "translate-x-0"
-            }`}
+            className={`cart-container fixed right-0 top-0 h-full w-full max-w-md bg-card dark:bg-card shadow-2xl transform transition-transform duration-300 ease-out ${isAnimating ? "translate-x-full" : "translate-x-0"
+              }`}
           >
             <div className="flex h-full flex-col">
               {/* Header */}

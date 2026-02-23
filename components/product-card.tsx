@@ -2,11 +2,13 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { withBasePath } from "@/lib/paths"
 import { Eye } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
+import { useRouter } from "next/navigation"
 
 interface ProductCardProps {
   product: {
@@ -25,16 +27,17 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const { language } = useLanguage()
   const [imageLoaded, setImageLoaded] = useState(false)
+  const router = useRouter()
 
   // Parse packaging information from description
   const parsePackaging = (description: string) => {
     const lines = description.split('\n')
-    const packagingIndex = lines.findIndex(line => 
-      line.toLowerCase().includes('emballage') || 
-      line.toLowerCase().includes('packaging') || 
+    const packagingIndex = lines.findIndex(line =>
+      line.toLowerCase().includes('emballage') ||
+      line.toLowerCase().includes('packaging') ||
       line.toLowerCase().includes('التعبئة')
     )
-    
+
     if (packagingIndex !== -1) {
       const packagingLines = lines.slice(packagingIndex + 1)
       return packagingLines.filter(line => line.trim() !== '')
@@ -60,7 +63,7 @@ export function ProductCard({ product }: ProductCardProps) {
           ? `Hello, I would like to get detailed information and a quote for the following product: ${product.name}.\n\nPlease contact me with your best terms.`
           : `مرحباً، أود الحصول على معلومات مفصلة وعرض سعر للمنتج التالي: ${product.name}.\n\nيرجى التواصل معي بأفضل شروطكم.`,
     )
-    window.location.href = `/contact?subject=${subject}&message=${body}`
+    router.push(`/contact?subject=${subject}&message=${body}`)
   }
 
   return (
@@ -71,12 +74,11 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 dark:from-gray-700 dark:via-gray-600 dark:to-gray-700 animate-pulse" />
         )}
         <Image
-          src={product.image || "/placeholder.svg"}
+          src={withBasePath(product.image || "/placeholder.svg")}
           alt={product.name}
           fill
-          className={`object-cover group-hover:scale-110 transition-transform duration-500 ${
-            imageLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className={`object-cover group-hover:scale-110 transition-transform duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"
+            }`}
           onLoad={() => setImageLoaded(true)}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />

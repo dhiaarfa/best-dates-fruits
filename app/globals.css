@@ -10,25 +10,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light theme – warm, date-inspired palette aligned with logo */
+    --background: 36 60% 97%; /* soft warm cream */
+    --foreground: 24 32% 12%; /* deep warm brown for text */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 24 32% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 24 32% 12%;
+    --primary: 34 70% 33%; /* brand brown-gold (#8D5B1A) */
+    --primary-foreground: 40 100% 97%; /* light cream on primary */
+    --secondary: 36 45% 92%; /* pale warm beige */
+    --secondary-foreground: 24 32% 12%;
+    --muted: 36 35% 90%;
+    --muted-foreground: 24 18% 40%;
+    --accent: 40 70% 88%; /* soft golden highlight */
+    --accent-foreground: 24 32% 12%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 36 30% 88%;
+    --input: 36 30% 88%;
+    --ring: 34 70% 33%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -38,30 +39,31 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Dark theme – rich date brown with warm highlights */
+    --background: 24 35% 7%; /* deep brown */
+    --foreground: 36 45% 94%; /* warm light text */
+    --card: 24 35% 10%;
+    --card-foreground: 36 45% 94%;
+    --popover: 24 35% 10%;
+    --popover-foreground: 36 45% 94%;
+    --primary: 40 85% 60%; /* brighter gold accent on dark */
+    --primary-foreground: 24 35% 7%;
+    --secondary: 24 25% 16%;
+    --secondary-foreground: 36 45% 94%;
+    --muted: 24 22% 18%;
+    --muted-foreground: 36 20% 70%;
+    --accent: 34 70% 33%;
+    --accent-foreground: 40 100% 97%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 24 22% 18%;
+    --input: 24 22% 18%;
+    --ring: 40 85% 60%;
+    --chart-1: 34 70% 55%; /* gold */
+    --chart-2: 24 35% 40%; /* brown */
+    --chart-3: 16 50% 50%; /* amber-brown */
+    --chart-4: 48 70% 60%; /* lighter gold */
+    --chart-5: 16 30% 30%; /* deep accent */
   }
 }
 
@@ -179,13 +181,13 @@
 
 /* Custom utilities */
 .navbar-glass {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(250, 245, 235, 0.95); /* warm light background */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .dark .navbar-glass {
-  background: rgba(17, 24, 39, 0.95);
+  background: rgba(24, 16, 8, 0.95); /* deep warm brown */
 }
 
 .shadow-soft {
@@ -261,7 +263,7 @@
 
 /* Focus styles */
 .focus-visible:focus-visible {
-  outline: 2px solid #d97706;
+  outline: 2px solid #8D5B1A;
   outline-offset: 2px;
 }
 

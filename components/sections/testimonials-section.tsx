@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { ChevronLeft, ChevronRight, Quote, Star, MapPin } from "lucide-react"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 
 export function TestimonialsSection() {
   const { language } = useLanguage()
@@ -164,9 +164,8 @@ export function TestimonialsSection() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? "bg-bdf-gold" : "bg-gray-300 dark:bg-gray-600"
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${index === currentIndex ? "bg-bdf-gold" : "bg-gray-300 dark:bg-gray-600"
+                  }`}
               />
             ))}
           </div>

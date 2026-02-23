@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { translations } from "@/lib/translations"
 import { Send, User, Mail, MessageSquare, Package } from "lucide-react"
 

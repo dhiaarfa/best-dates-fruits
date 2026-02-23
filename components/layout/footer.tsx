@@ -3,9 +3,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import { withBasePath } from "@/lib/paths"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { translations } from "@/lib/translations"
-import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react"
 
 export default function Footer() {
   const { language } = useLanguage()
@@ -13,23 +13,23 @@ export default function Footer() {
   const isRTL = language === "ar"
 
   return (
-    <footer className="bg-gray-900 text-white" dir={isRTL ? "rtl" : "ltr"}>
+    <footer className="bg-bdf-brown text-white" dir={isRTL ? "rtl" : "ltr"}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
-              <div className="bg-white/70 rounded px-0 py-0.5 shadow-sm">
+              <div className="bg-white/80 rounded px-2 py-1 shadow-sm">
                 <Image
-                  src={withBasePath("images/new-bdf-logo.png")}
-                  alt="Best Dates & Fruits - D&F Logo"
-                  width={200}
-                  height={70}
+                  src={withBasePath("images/logo-full.svg")}
+                  alt="Best Dates & Fruits Logo"
+                  width={220}
+                  height={80}
                   className="h-10 w-auto object-contain"
                 />
               </div>
             </div>
-            
+
             {/* Ramis Logo */}
             <div className="flex items-center space-x-3 rtl:space-x-reverse mt-4">
               <Image
@@ -184,7 +184,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
-              © 2024 Best Dates & Fruits. 
+              © 2024 Best Dates & Fruits.
               {language === "fr" && " Tous droits réservés."}
               {language === "en" && " All rights reserved."}
               {language === "ar" && " جميع الحقوق محفوظة."}

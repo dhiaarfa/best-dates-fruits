@@ -1,3 +1,5 @@
+export type Language = "fr" | "en" | "ar"
+
 export const translations = {
   fr: {
     // Navigation
@@ -136,6 +138,23 @@ export const translations = {
       privacyPolicy: "Politique de confidentialité",
       termsOfService: "Conditions d'utilisation",
     },
+
+    // Production section
+    productionLine: "Ligne de Production Moderne",
+    productionLineDesc:
+      "Des installations de pointe combinant savoir-faire traditionnel tunisien et technologies de pointe pour garantir une qualité irréprochable.",
+    modernProcessing: "Processus de transformation moderne",
+    modernProcessingDesc:
+      "Des lignes de production automatisées qui respectent l'intégrité du fruit tout en assurant une hygiène maximale.",
+    qualityPackaging: "Emballage de haute qualité",
+    qualityPackagingDesc:
+      "Des solutions d'emballage adaptées à l'export, préservant fraîcheur, texture et présentation premium.",
+    qualityControl: "Contrôle qualité strict",
+    qualityControlDesc:
+      "Des contrôles à chaque étape, de la récolte à l'expédition, selon les normes internationales ISO 22000.",
+    globalDistribution: "Distribution internationale",
+    globalDistributionDesc:
+      "Une logistique optimisée pour livrer nos dattes tunisiennes premium sur les marchés les plus exigeants.",
   },
 
   en: {
@@ -273,6 +292,23 @@ export const translations = {
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
     },
+
+    // Production section
+    productionLine: "Modern Production Line",
+    productionLineDesc:
+      "State-of-the-art facilities combining traditional Tunisian expertise with advanced technology to ensure uncompromising quality.",
+    modernProcessing: "Modern processing",
+    modernProcessingDesc:
+      "Automated production lines that respect the integrity of the fruit while guaranteeing maximum hygiene.",
+    qualityPackaging: "High-quality packaging",
+    qualityPackagingDesc:
+      "Export-ready packaging solutions that preserve freshness, texture, and a premium presentation.",
+    qualityControl: "Strict quality control",
+    qualityControlDesc:
+      "Checks at every stage, from harvest to shipment, in line with international ISO 22000 standards.",
+    globalDistribution: "Global distribution",
+    globalDistributionDesc:
+      "Optimized logistics to deliver our premium Tunisian dates to the most demanding markets worldwide.",
   },
 
   ar: {
@@ -410,6 +446,23 @@ export const translations = {
       privacyPolicy: "سياسة الخصوصية",
       termsOfService: "شروط الخدمة",
     },
+
+    // Production section
+    productionLine: "خط إنتاج حديث",
+    productionLineDesc:
+      "منشآت متطورة تجمع بين الخبرة التونسية التقليدية وأحدث التقنيات لضمان جودة لا تقبل المساومة.",
+    modernProcessing: "معالجة حديثة",
+    modernProcessingDesc:
+      "خطوط إنتاج آلية تحافظ على سلامة الثمرة مع ضمان أعلى معايير النظافة.",
+    qualityPackaging: "تغليف عالي الجودة",
+    qualityPackagingDesc:
+      "حلول تغليف جاهزة للتصدير تحفظ الطراوة والقوام والعرض الفاخر.",
+    qualityControl: "مراقبة جودة صارمة",
+    qualityControlDesc:
+      "فحوصات في كل مرحلة من الحصاد إلى الشحن وفقًا للمعايير الدولية ISO 22000.",
+    globalDistribution: "توزيع عالمي",
+    globalDistributionDesc:
+      "لوجستيات محسّنة لتوصيل تمورنا التونسية الفاخرة إلى أكثر الأسواق تطلبًا حول العالم.",
   },
 }
 

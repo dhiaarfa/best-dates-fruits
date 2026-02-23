@@ -2,13 +2,13 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Navbar from "@/components/navbar"
-import { PageHeader } from "@/components/page-header"
-import { Breadcrumbs } from "@/components/breadcrumbs"
+
+import { PageHeader } from "@/components/layout/page-header"
+import { Breadcrumbs } from "@/components/layout/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { translations } from "@/lib/translations"
 import { Leaf, Award, Shield, Truck } from 'lucide-react'
 
@@ -24,8 +24,8 @@ export default function IngredientsPage() {
       description: language === "fr"
         ? "Sirop naturel extrait de dattes premium, riche en saveurs et parfait pour la pâtisserie et les boissons."
         : language === "en"
-        ? "Natural syrup extracted from premium dates, rich in flavors and perfect for pastry and beverages."
-        : "شراب طبيعي مستخرج من التمور الفاخرة، غني بالنكهات ومثالي للحلويات والمشروبات.",
+          ? "Natural syrup extracted from premium dates, rich in flavors and perfect for pastry and beverages."
+          : "شراب طبيعي مستخرج من التمور الفاخرة، غني بالنكهات ومثالي للحلويات والمشروبات.",
       image: "images/date-syrup-plate.jpeg",
       category: language === "fr" ? "Sirops" : language === "en" ? "Syrups" : "شراب",
       features: [
@@ -40,8 +40,8 @@ export default function IngredientsPage() {
       description: language === "fr"
         ? "Dattes de qualité industrielle, parfaites pour la transformation et les préparations culinaires à grande échelle."
         : language === "en"
-        ? "Industrial quality dates, perfect for large-scale processing and culinary preparations."
-        : "تمور بجودة صناعية، مثالية للمعالجة والتحضيرات الطهوية على نطاق واسع.",
+          ? "Industrial quality dates, perfect for large-scale processing and culinary preparations."
+          : "تمور بجودة صناعية، مثالية للمعالجة والتحضيرات الطهوية على نطاق واسع.",
       image: "images/deglet-nour-standard.jpeg",
       category: language === "fr" ? "Dattes" : language === "en" ? "Dates" : "تمور",
       features: [
@@ -56,8 +56,8 @@ export default function IngredientsPage() {
       description: language === "fr"
         ? "Pâte onctueuse de dattes, idéale pour la fabrication de confiseries et produits de boulangerie."
         : language === "en"
-        ? "Smooth date paste, ideal for manufacturing confectionery and bakery products."
-        : "معجون تمر ناعم، مثالي لتصنيع الحلويات ومنتجات المخابز.",
+          ? "Smooth date paste, ideal for manufacturing confectionery and bakery products."
+          : "معجون تمر ناعم، مثالي لتصنيع الحلويات ومنتجات المخابز.",
       image: "images/date-paste-blocks.jpeg",
       category: language === "fr" ? "Pâtes" : language === "en" ? "Pastes" : "معجون",
       features: [
@@ -72,8 +72,8 @@ export default function IngredientsPage() {
       description: language === "fr"
         ? "Poudre fine de dattes déshydratées, parfaite comme édulcorant naturel et exhausteur de goût."
         : language === "en"
-        ? "Fine powder from dehydrated dates, perfect as natural sweetener and flavor enhancer."
-        : "مسحوق ناعم من التمور المجففة، مثالي كمحلي طبيعي ومعزز للنكهة.",
+          ? "Fine powder from dehydrated dates, perfect as natural sweetener and flavor enhancer."
+          : "مسحوق ناعم من التمور المجففة، مثالي كمحلي طبيعي ومعزز للنكهة.",
       image: "images/date-powder.jpeg",
       category: language === "fr" ? "Poudres" : language === "en" ? "Powders" : "مسحوق",
       features: [
@@ -88,8 +88,8 @@ export default function IngredientsPage() {
       description: language === "fr"
         ? "Dattes coupées en morceaux uniformes, idéales pour l'incorporation dans les produits alimentaires."
         : language === "en"
-        ? "Dates cut into uniform pieces, ideal for incorporation into food products."
-        : "تمور مقطعة إلى قطع موحدة، مثالية للدمج في المنتجات الغذائية.",
+          ? "Dates cut into uniform pieces, ideal for incorporation into food products."
+          : "تمور مقطعة إلى قطع موحدة، مثالية للدمج في المنتجات الغذائية.",
       image: "images/stuffed-dates-variety.jpeg",
       category: language === "fr" ? "Dattes" : language === "en" ? "Dates" : "تمور",
       features: [
@@ -118,16 +118,16 @@ export default function IngredientsPage() {
     { icon: Truck, name: "Export", color: "text-amber-600" }
   ]
 
-  const filteredIngredients = selectedCategory === "all" 
-    ? ingredients 
+  const filteredIngredients = selectedCategory === "all"
+    ? ingredients
     : ingredients.filter(ingredient => {
-        const categoryLower = ingredient.category?.toLowerCase() || ""
-        if (selectedCategory === "syrups") return categoryLower.includes("sirops") || categoryLower.includes("syrups") || categoryLower.includes("شراب")
-        if (selectedCategory === "pastes") return categoryLower.includes("pâtes") || categoryLower.includes("pastes") || categoryLower.includes("معجون")
-        if (selectedCategory === "dates") return categoryLower.includes("dattes") || categoryLower.includes("dates") || categoryLower.includes("تمور")
-        if (selectedCategory === "powders") return categoryLower.includes("poudres") || categoryLower.includes("powders") || categoryLower.includes("مسحوق")
-        return true
-      })
+      const categoryLower = ingredient.category?.toLowerCase() || ""
+      if (selectedCategory === "syrups") return categoryLower.includes("sirops") || categoryLower.includes("syrups") || categoryLower.includes("شراب")
+      if (selectedCategory === "pastes") return categoryLower.includes("pâtes") || categoryLower.includes("pastes") || categoryLower.includes("معجون")
+      if (selectedCategory === "dates") return categoryLower.includes("dattes") || categoryLower.includes("dates") || categoryLower.includes("تمور")
+      if (selectedCategory === "powders") return categoryLower.includes("poudres") || categoryLower.includes("powders") || categoryLower.includes("مسحوق")
+      return true
+    })
 
   const handleImageLoad = (id: number) => {
     setImageLoadStates(prev => ({ ...prev, [id]: true }))
@@ -152,9 +152,9 @@ export default function IngredientsPage() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
-      <Navbar />
-      
+    <main className="min-h-screen flex flex-col bg-background">
+
+
       <div className="pt-24 pb-16">
         <Breadcrumbs
           items={[
@@ -196,11 +196,10 @@ export default function IngredientsPage() {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                    selectedCategory === category.id
-                      ? "bg-amber-500 text-white"
-                      : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-amber-100 dark:hover:bg-amber-900/20"
-                  }`}
+                  className={`px-6 py-2 rounded-full font-medium transition-colors ${selectedCategory === category.id
+                    ? "bg-amber-500 text-white"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-amber-100 dark:hover:bg-amber-900/20"
+                    }`}
                 >
                   {category.name}
                 </button>
@@ -220,9 +219,8 @@ export default function IngredientsPage() {
                     src={ingredient.image || "/placeholder.svg"}
                     alt={ingredient.name}
                     fill
-                    className={`object-cover group-hover:scale-110 transition-transform duration-500 ${
-                      imageLoadStates[ingredient.id] ? "opacity-100" : "opacity-0"
-                    }`}
+                    className={`object-cover group-hover:scale-110 transition-transform duration-500 ${imageLoadStates[ingredient.id] ? "opacity-100" : "opacity-0"
+                      }`}
                     onLoad={() => handleImageLoad(ingredient.id)}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
@@ -240,7 +238,7 @@ export default function IngredientsPage() {
                   <h3 className="text-xl font-playfair font-bold mb-3 text-amber-700 dark:text-amber-400">
                     {ingredient.name}
                   </h3>
-                  
+
                   <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                     {ingredient.description}
                   </p>

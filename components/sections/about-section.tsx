@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { withBasePath } from "@/lib/paths"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 
 export function AboutSection() {
   const { language } = useLanguage()
@@ -14,12 +14,12 @@ export function AboutSection() {
           <div>
             <div className="mb-8">
               {/* Logo with minimal transparent background */}
-              <div className="bg-white/75 px-0 py-1 rounded inline-block mb-6 shadow-md">
+              <div className="bg-white/80 px-2 py-1 rounded inline-block mb-6 shadow-md">
                 <Image
-                  src={withBasePath("images/new-bdf-logo.png")}
-                  alt="Best Dates & Fruits - D&F Logo"
-                  width={240}
-                  height={80}
+                  src={withBasePath("images/logo-full.svg")}
+                  alt="Best Dates & Fruits Logo"
+                  width={260}
+                  height={90}
                   className="h-16 w-auto object-contain"
                 />
               </div>
@@ -60,7 +60,7 @@ export function AboutSection() {
           <div className="relative">
             <Image
               src={withBasePath("images/production-facility.jpg")}
-                              alt="Best Dates & Fruits Production Facility"
+              alt="Best Dates & Fruits Production Facility"
               width={600}
               height={400}
               className="rounded-lg shadow-lg"

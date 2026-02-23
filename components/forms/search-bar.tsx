@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { Search, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 import { getTranslation } from "@/lib/translations"
 
 export function SearchBar() {
@@ -83,7 +83,7 @@ export function SearchBar() {
       {/* Search Overlay */}
       {isOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center pt-20">
-          <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-6 w-full max-w-2xl mx-4 animate-fade-in">
+          <div className="bg-card dark:bg-card rounded-3xl shadow-2xl p-6 w-full max-w-2xl mx-4 animate-fade-in">
             <form onSubmit={handleSearch} className="space-y-4">
               <div className="relative">
                 <Input

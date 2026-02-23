@@ -1,6 +1,6 @@
 "use client"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { useLanguage } from "@/components/language-provider"
+import { useLanguage } from "@/components/providers/language-provider"
 
 interface FAQItem {
   question: { [key: string]: string }
